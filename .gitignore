@@ -1,0 +1,18 @@
+# 비밀 정보
+.env
+
+# 실행 산출물 (각자 로컬. 결과 공유는 노션 실험 로그에)
+runs/
+responses*.csv
+out*.csv
+
+# 캐시
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data/dev/_cache/
+index/mock_*/
+
+# OS
+.DS_Store
+Thumbs.db

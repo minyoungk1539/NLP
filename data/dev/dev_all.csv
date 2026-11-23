@@ -1,0 +1,1171 @@
+question_id,prompts,answers,domain,subject,qtype,gold_ref,gold_page,source,note
+S-001,"QUESTION1) '재입학은 a회에 한하여 할 수 있다. 다만 제 28조제4호에 의하여 제적된 자는 제적된 날부터 b년이 경과한 후 재입학 할 수 있다.' a와 b가 상수일 때 a+b의 값을 구하면?
+(A) 2
+(B) 3
+(C) 4
+(D) A,B,C 중 답 없음",(A),ewha,학칙,calc,제31조②,7,data/test_samples.csv,재입학 1회 + 1년 → 2
+S-002,"QUESTION2) 다음 보기의 학생들 중 제적을 당하지 않는 사람을 고르면?
+(A) 팜 : 징계에 의해 퇴학처분을 받았음 
+(B) 엘모 : 성적이 평점평균 1.2 로 학사경고를 연속 3회 받았음
+(C) 라마 : 수업료 기타 납입금을 소정 기일 내 납입하지 못하였음
+(D) 로라 : 휴학기간 경과 후 3주가 지났으나 갑자기 큰 사고가 났다는 정당한 이유 때문에 복학하지 못하였음",(D),ewha,학칙,multi,제28조; 제41조④,7;10,data/test_samples.csv,제적 사유 목록 + 학사경고 연속 3회
+S-003,"QUESTION3) 1980학년도 이전 입학생에 대하여 적용하는 등급에 따른 성적점으로 잘못 연결된 것은 무엇인가? 
+(A) 등급: A+, 성적점: 4 
+(B) 등급: A-: 성적점: 3.5 
+(C) 등급: B+, 성적점: 3 
+(D) 등급: C, 성적점: 2",(B),ewha,학칙,supplementary,부칙(1981.5.19)②,20,data/test_samples.csv,성적점 표가 열 단위로 추출되어 깨짐
+S-004,"QUESTION4) 복수전공 신청 자격에 해당하지 않는 것은? 
+(A) 1학년을 마친 학생 
+(B) 평균 평점이 2.50 이상인 학생 
+(C) 졸업 직전 학기에 있는 학생 
+(D) 재학생 신분인 경우",(C),ewha,학칙,no_evidence,학칙에서 근거 미확인,,data/test_samples.csv,복수전공 신청 자격(2.50 등)은 학칙 본문·부칙에 없음 → 모델 지식/추론 의존
+S-005,QUESTION5) 이화여자대학교의 위치는 어디인가요?  (A) 강남구 (B) 서대문구 (C) 종로구 (D) 송파구,(B),ewha,학칙,fact,제3조,1,data/test_samples.csv,선택지 구분자 U+2028
+S-006,"QUESTION6) 전공과 관련된 조항으로 올바른 것은?
+(A) 2 이상의 학부가 연계하여 제공하는 전공을 복수전공이라 한다.
+(B) 학생이 소속한 제1전공과정에 기반하여 타학문과의 융복합 교육과정을 제공하는 전공을 융합전공이라 한다.
+(C) 2 이상의 전공을 자기설계전공이라 한다.
+(D) 학생이 교육과정을 구성하여 대학의 인정을 받은 전공을 연계전공이라 한다.",(B),ewha,학칙,multi,제47조①,11,data/test_samples.csv,전공 정의 4종 비교
+S-007,"QUESTION7) 전공과목은 어떻게 구분되는가?
+(A) 전공기초과목과 전공과목
+(B) 총장이 따로 정한다
+(C) 필수과목과 선택과목
+(D) 구분하지 않는다",(C),ewha,학칙,fact,제34조,7,data/test_samples.csv,
+S-008,"QUESTION8)계절학기에 취득할 수 있는 최대 학점은 몇 점입니까?
+(A) 3학점
+(B) 6학점
+(C) 9학점
+(D) 12학점",(B),ewha,학칙,fact,제45조⑤,11,data/test_samples.csv,
+S-009,"QUESTION9)수업의 결석이 출석으로 인정될 수 있는 사유가 아닌 것은?
+(A) 중대한 질병
+(B) 직계존비속의 사망
+(C) 국제 대회 참가
+(D) 개인 사정",(D),ewha,학칙,negation,제40조②,10,data/test_samples.csv,'아닌 것' 고르기
+S-010,"QUESTION10) 재학 연한 초과로 제적당하지 않는 경우는?
+(A) 학사 편입
+(B) 복수 전공 중
+(C) 재입학 후 1년 이내
+(D) 휴학 중",(D),ewha,학칙,condition,제24조⑥,6,data/test_samples.csv,휴학기간은 재학연한에 산입하지 않음
+S-011,"QUESTION11) 교양과목을 제외한 전공과목의 분류는 무엇입니까?
+(A) 필수/선택
+(B) 정규/특별
+(C) 일반/고급
+(D) 학점 기준",(A),ewha,학칙,fact,제34조,7,data/test_samples.csv,
+S-012,"QUESTION12) 다음 중 이화여자대학교 학칙에서 학점과 관련해 옳은 것을 고르세요
+(A) 교과과정이수 단위는 학기로 한다.
+(B) 한 학기동안 10시간 이상 수업을 들으면 1학점을 준다.
+(C) 학점취득특별시험의 방법은 총장과 위원회가 함께 정한다.
+(D) 제35조는 1999년 2월에 개정되었다.",(D),ewha,학칙,amendment,제35조; 제35조의2②,7;8,data/test_samples.csv,개정 날짜 (1999.2.9)
+S-013,"QUESTION13) QUESTION 6) A psychologist is asked to see a 10-year-old child for counseling in a school setting. Which of the following statements describes the best way for the psychologist to meet the prescribed ethical responsibility
+(A) ""The parent(s) provide(s) written consent and the psychologist obtains the child's assent non-verbally""
+(B) ""Both the parent(s) and the child provide written consent to therapy for the child""
+(C) ""The child provides written and verbal consent to therapy""
+(D) ""The parent(s) provide(s) written consent and the child assents verbally to participate in therapy""
+(E) ""The psychologist obtains written consent from both the school administration and the parent(s)""
+(F) ""The school administration provides written consent and the child assents verbally to participate in therapy""
+(G) ""The parent(s) provide(s) written and verbal consent to therapy for the child""
+(H) ""The parent(s) provide(s) verbal consent and the child provides written consent to participate in therapy""
+(I) ""The child provides verbal assent to participate in therapy""
+(J) ""The psychologist obtains verbal consent from the school administration"" ]",(D),mmlu,psychology,knowledge,,,data/test_samples.csv,"번호 접두어 중복, 끝에 ' ]'"
+S-014,"QUESTION14) What do Homo sapiens and Australopithecus afarensis have in common?
+(A) ""a shared ability to use complex tools""
+(B) ""a similar diet""
+(C) ""a reliance on brachiation""
+(D) ""an identical social structure""
+(E) ""a mode of locomotion""
+(F) ""the same lifespan""
+(G) ""the same geographical distribution""
+(H) ""a lack of sexual dimorphism""
+(I) ""the same language capability""
+(J) ""all the above""",(E),mmlu,history,knowledge,,,data/test_samples.csv,
+S-015,"QUESTION15)Homo erectus differed from Homo habilis in which way?
+ (A) Erectus was not bipedal.
+ (B) Erectus was not capable of using tools.
+ (C) Erectus was primarily herbivorous.
+ (D) Erectus fossils are found only in Africa.
+ (E) Erectus possessed a larger brain.
+ (F) Erectus was a relatively short-lived species.
+ (G) Erectus had smaller body size.
+ (H) Erectus fossils are found only in Europe.
+ (I) Erectus possessed a smaller brain.
+ (J) Erectus had shorter lifespan.",(E),mmlu,history,knowledge,,,data/test_samples.csv,선택지 앞 공백
+S-016,"QUESTION16) This question refers to the following information: For the catastrophe of 1914 the Germans are responsible. … Germany, in this matter, was unfortunate enough to allow herself (in spite of her skill at dissimulation) to be betrayed into an excess of candour by her characteristic tendency to go to extremes. Deutschland über alles. Germany above everything! … There you have the ultimate framework of an old but childish race. Georges Clemenceau, Grandeur and Misery of Victory, 1930. From the passage, one may infer that Clemenceau believed:  (A) that Germany's skill at dissimulation was responsible for its victory in the war  (B) that the reason Germany lost the war was that it was betrayed from within  (C) that the lyrics from the popular song Deutschland über alles (which eventually became the German national anthem) were evidence of Germany's aggressive attitude  (D) that Germany's misfortune in the war was due to its lack of skill in dissimulation  (E) that the lyrics from the popular song Deutschland über alles (which eventually became the German national anthem) were the reason Germany started the war  (F) that Germany provided the ultimate framework for modern warfare  (G) that Germany's excessive candour led to its downfall in the war",(C),mmlu,history,passage,,,data/test_samples.csv,"선택지 7개(A–G), U+2028 구분자, 지문 독해"
+S-017,"QUESTION17) During the second stage of Kohlberg’s preconventional level of moral development, children obey rules because:
+(A) they are taught that rules are unbreakable.
+(B) they enjoy following the rules.
+(C) they are rewarded for following rules.
+(D) they feel they have a personal duty to uphold rules and laws.
+(E) doing so helps them satisfy their personal needs.
+(F) they understand the concept of fairness and justice.
+(G) doing so helps them avoid punishment.
+(H) '''everyone else is doing it.'''
+(I) they believe in the inherent goodness of rules.
+(J) they fear societal disapproval.",(E),mmlu,psychology,knowledge,,,data/test_samples.csv,
+S-018,"QUESTION18) Aristotle says  that what makes things be what they are--their essence--does not exist apart from individ-uals that exist in the world.  So if all the members of a species were destroyed, then their essence or form:
+(A) would remain preserved in the memories of the remaining species.
+(B) would not be destroyed because there was no essence or form originally to be destroyed; there are only individuals, not universal essences or natures of things.
+(C) would evolve into a different form or essence.
+(D) would be destroyed only if the species was eliminated by unnatural causes.
+(E) would be absorbed by another species.
+(F) would transform into the essence of another existing species.
+(G) would be destroyed only if there were no one around to remember the species.
+(H) would exist as long as there are traces or remnants of the species left in the world.
+(I) would continue existing (as with Plato's Forms) in some other realm of being.
+(J) would likewise be destroyed.",(J),mmlu,philosophy,knowledge,,,data/test_samples.csv,
+S-019,"QUESTION19) A woman was standing in the aisle of a subway car and put her purse on the seat next to her. A man approached the woman from behind and grabbed the purse off the seat. He then pushed the woman out of the way and ran out of the subway car while carrying the purse. The man was apprehended on the subway platform while in possession of the purse. In a jurisdiction that follows the common law with respect to criminal offenses, of what crime can the man properly be convicted?
+
+(A) Fraud, because he took the purse without the woman's consent.
+(B) Larceny, because he took the purse without the woman's permission.
+(C) Burglary, because he entered the subway car with the intention of committing a theft.
+(D) Robbery, because he used force in leaving with the purse.
+(E) Robbery, because he used force to take possession of the purse.
+(F) Robbery, because he used force to remove the woman from the purse's vicinity.
+(G) Larceny, because force was not used until after he took the purse.
+(H) Assault, because he pushed the woman out of the way.
+(I) Larceny, because he made no threat to use force.
+(J) Robbery, because he physically took the purse from the woman's presence.",(D),mmlu,law,application,,,data/test_samples.csv,"빈 줄 포함, 법리 적용"
+S-020,"QUESTION20)____________ refers to a strategic process involving stakeholder assessment to create long-term relationships with customers, while maintaining, supporting, and enhancing the natural environment.
+ (A) Greenwashing (B) Eco-branding (C) Recycle and reprocess management (D) Sustainable Development (E) Environmental Stewardship (F) Superfund reauthorization (G) Eco-strategy (H) Environmental Impact Assessment (I) Green Marketing (J) Eco-efficient Operations",(I),mmlu,business,knowledge,,,data/test_samples.csv,U+2028 구분자
+S-021,"QUESTION21) Is the recognition of foreign judgments subject to the same rules as those applicable to the incorporation and transformation of treaties?
+(A) Foreign judgments are enforced on the basis of the doctrine of monism
+(B) Foreign judgments are enforced on the basis of the doctrine of dualism
+(C) Foreign judgments are enforced on the basis of the doctrine of incorporation
+(D) The recognition of foreign judgments is dependent on the existence of appropriate bilateral or multilateral treaties
+(E) The courts exercise discretion as to the enforcement of foreign judgments on the basis of the rule of reciprocity
+(F) Foreign judgments are automatically recognized and enforced without any additional process.
+(G) Foreign judgments are enforced on the basis of the doctrine of transformation",(D),mmlu,law,knowledge,,,data/test_samples.csv,선택지 7개(A–G)
+S-022,"QUESTION22) BobGafneyand Susan Medina invested $40,000 and $50,000 respectively in a luncheonette. Since Mr.Gafneyis the manager of the luncheonette, he gets 4% of the net income. Each partner receives 6% interest on his or her investment. Any remaining net income is divided equally. If the net income for any year is $28,600, how is it divided?
+(A) Mr. Gafney's income is $12,600 and Ms. Medina's income is $16,000
+(B) Mr. Gafney's income is $14,000 and Ms. Medina's income is $14,600
+(C) Mr.Gafney's income is $14,572 and Ms. Medina's income is $15,028
+(D) Mr.Gafney's income is $15,572 and Ms. Medina's income is $13,028
+(E) Mr. Gafney's income is $16,000 and Ms. Medina's income is $12,600
+(F) Mr.Gafney's income is $14,572 and Ms. Medina's income is $14,028
+(G) Mr. Gafney's income is $15,300 and Ms. Medina's income is $13,300
+(H) Mr. Gafney's income is $13,300 and Ms. Medina's income is $15,300
+(I) Mr. Gafney's income is $14,600 and Ms. Medina's income is $14,000
+(J) Mr.Gafney's income is $13,572 and Ms. Medina's income is $15,028",(F),mmlu,business,calc,,,data/test_samples.csv,계산형
+S-023,"QUESTION23) In 1797, John Frere made a discovery that he described as:
+(A) a new type of metal alloy.
+(B) the earliest written documents.
+(C) the remains of a massive wooden ship believed to be Noah's Ark.
+(D) animal remains scattered on the surface of the ground.
+(E) the ruins of an ancient civilization under the sea.
+(F) fossils of a previously unknown dinosaur species.
+(G) cave paintings depicting ancient hunting scenes.
+(H) human skulls with ape-like features.
+(I) primitive stone tools excavated at great depth.
+(J) a hidden underground city.",(I),mmlu,history,knowledge,,,data/test_samples.csv,
+S-024,"QUESTION24) Which of the following describes a key change in hominids beginning at least as early as Homo erectus that is probably related to increasingly larger brain size?
+(A) cranial reduction
+(B) decreased dentition
+(C) microcephaly
+(D) supraorbital cortex
+(E) encephalization
+(F) opposable thumbs
+(G) prognathism
+(H) neoteny
+(I) bipedalism
+(J) increased body size",(H),mmlu,history,knowledge,,,data/test_samples.csv,
+S-025,"QUESTION25) Which is the least accurate description of legal positivism?
+(A) It perceives law as arbitrary and without any logical structure.
+(B) It regards morals and law as inseparable.
+(C) It espouses the view that there is no necessary connection between morality and law.
+(D) It regards a legal order as a closed logical system.
+(E) It perceives law as commands.
+(F) It regards law as suggestions rather than commands.
+(G) It asserts that law is based on personal beliefs and opinions.
+(H) It implies that legal decisions are made purely on emotional grounds.
+(I) It views law as inherently just and moral.
+(J) It suggests that morality is the only basis of law.",(B),mmlu,law,knowledge,,,data/test_samples.csv,
+E-001,"QUESTION1) 재학 중인 학생이 휴학을 하고자 하는 경우, 학기개시일로부터 며칠 이내에 휴학을 신청하여야 하는가?
+(A) 90일
+(B) 30일
+(C) 60일
+(D) 120일",(A),ewha,학칙,fact,제26조⑥,6,자작 (ewha.pdf 원문으로 정답 확인),
+E-002,"QUESTION2) 1회의 휴학기간은 원칙적으로 얼마 이내로 하는가?
+(A) 6개월
+(B) 1년
+(C) 2년
+(D) 3년",(B),ewha,학칙,fact,제26조③,6,자작 (ewha.pdf 원문으로 정답 확인),영어 문항
+E-003,"QUESTION3) 일반 학생(건축학전공·의예과가 아니며, 임신·출산·육아·창업·군복무 휴학이 아닌 경우)의 휴학기간은 통산하여 몇 년을 초과할 수 없는가?
+(A) 2년
+(B) 4년
+(C) 5년
+(D) 3년",(D),ewha,학칙,condition,제26조④,6,자작 (ewha.pdf 원문으로 정답 확인),
+E-004,"QUESTION4) 학칙상 일반적인 재학연한은 몇 년을 초과할 수 없는가?
+(A) 6년
+(B) 7년
+(C) 8년
+(D) 10년",(C),ewha,학칙,fact,제24조①,5,자작 (ewha.pdf 원문으로 정답 확인),
+E-005,"QUESTION5) 복수전공을 이수하는 학생의 재학연한은 몇 년을 초과할 수 없는가?
+(A) 9년
+(B) 8년
+(C) 10년
+(D) 12년",(A),ewha,학칙,condition,제24조③,6,자작 (ewha.pdf 원문으로 정답 확인),
+E-006,"QUESTION6) 재학연한에 관한 설명으로 옳은 것은?
+(A) 휴학기간은 재학연한에 산입한다.
+(B) 편입학한 학생의 재학연한은 잔여수업연한의 3배를 초과할 수 없다.
+(C) 재입학한 학생의 재학연한은 재입학 전 재학기간을 산입하여 계산한다.
+(D) 엘텍공과대학 건축학전공 학생의 재학연한은 8년을 초과할 수 없다.",(C),ewha,학칙,multi,제24조②④⑤⑥,5;6,자작 (ewha.pdf 원문으로 정답 확인),
+E-007,"QUESTION7) 졸업에 필요한 학점은 원칙적으로 몇 학점인가?
+(A) 120학점
+(B) 126학점
+(C) 130학점
+(D) 129학점",(D),ewha,학칙,fact,제48조①,12,자작 (ewha.pdf 원문으로 정답 확인),
+E-008,"QUESTION8) 직전 학기(계절학기 제외)말의 평균성적이 3.80인 학생이 일반학기에 취득할 수 있는 최대 학점은?
+(A) 18학점
+(B) 21학점
+(C) 19학점
+(D) 24학점",(B),ewha,학칙,condition,제45조① 제2호,10;11,자작 (ewha.pdf 원문으로 정답 확인),
+E-009,"QUESTION9) 휴학 중인 학생이 계절학기에 등록하여 취득할 수 있는 최대 학점은?
+(A) 3학점
+(B) 6학점
+(C) 9학점
+(D) 취득할 수 없다",(A),ewha,학칙,condition,제45조⑤,11,자작 (ewha.pdf 원문으로 정답 확인),
+E-010,"QUESTION10) 1학기 수업시간의 얼마 이상을 결석하면 그 교과목의 성적을 F 또는 U로 하는가?
+(A) 4분의 1
+(B) 5분의 1
+(C) 6분의 1
+(D) 3분의 1",(C),ewha,학칙,fact,제40조①,9,자작 (ewha.pdf 원문으로 정답 확인),영어 문항
+E-011,"QUESTION11) 중대한 질병 등의 사유로 결석한 학생이 출석으로 인정받으려면 사유발생 후 언제까지 증빙서류를 제출해야 하는가?
+(A) 1주 이내
+(B) 3주 이내
+(C) 1개월 이내
+(D) 2주 이내",(D),ewha,학칙,fact,제40조②,9;10,자작 (ewha.pdf 원문으로 정답 확인),
+E-012,"QUESTION12) 학기말의 평균성적이 얼마 미만인 학생에게 학사경고를 하는가?
+(A) 1.50
+(B) 1.60
+(C) 1.70
+(D) 2.00",(B),ewha,학칙,fact,제41조④,10,자작 (ewha.pdf 원문으로 정답 확인),
+E-013,"QUESTION13) 재수강에 관한 설명으로 옳은 것은?
+(A) 성적등급이 B0 이하인 교과목만 재수강할 수 있다.
+(B) 재수강한 교과목의 성적은 A0를 초과할 수 없다.
+(C) 이미 이수한 교과목의 성적등급이 C+ 이하인 경우 재수강할 수 있다.
+(D) 재수강 시 성적점은 재수강 전 성적과 평균하여 계산한다.",(C),ewha,학칙,multi,제39조④⑤,9,자작 (ewha.pdf 원문으로 정답 확인),
+E-014,"QUESTION14) 졸업에 필요한 학점(원칙)을 a, 일반학기의 취득기준학점을 b라 할 때 a−b의 값은?
+(A) 108
+(B) 111
+(C) 112
+(D) 115",(B),ewha,학칙,calc,제48조①; 제45조①,10;12,자작 (ewha.pdf 원문으로 정답 확인),
+E-015,"QUESTION15) 2003년 2월 7일 개정 학칙 부칙에 따르면, 구 학칙 제28조 제7호의 사유로 제적된 자는 이 학칙 시행일부터 몇 년 이내에 재입학을 신청할 수 있는가?
+(A) 1년
+(B) 3년
+(C) 2년
+(D) 5년",(C),ewha,학칙,supplementary,부칙(2003.2.7)②,27,자작 (ewha.pdf 원문으로 정답 확인),영어 문항
+E-016,"QUESTION16) 2002년 10월 7일 개정 학칙 부칙의 경과조치에 따르면, 2001학년도 이전에 휴학하고 납입금의 3분의 2 해당액이 이월된 학생이 복학할 때 내야 하는 납입금은?
+(A) 납입하지 아니함
+(B) 휴학당시 납입금의 2분의 1 해당액
+(C) 휴학당시 납입금 전액
+(D) 휴학당시 납입금의 3분의 1 해당액",(D),ewha,학칙,supplementary,부칙(2002.10.7) 제2조,27,자작 (ewha.pdf 원문으로 정답 확인),영어 문항
+E-017,"QUESTION17) 다음 중 학칙 조문의 개정 연혁으로 옳은 것은?
+(A) 제3조(위치)는 2013년 2월에 개정되었다.
+(B) 제35조(학점)는 2015년 9월에 개정되었다.
+(C) 제34조(전공과목)는 2016년 2월에 개정되었다.
+(D) 제48조 제1항(졸업에 필요한 학점)은 2017년 8월에 개정되었다.",(A),ewha,학칙,amendment,제3조; 제34조; 제35조; 제48조①,1;7;12,자작 (ewha.pdf 원문으로 정답 확인),
+E-018,"QUESTION18) '재학 중인 자가 휴학을 하고자 하는 경우 학기개시일로부터 90일 이내에 휴학을 신청하여야 한다'는 조항이 신설된 시기는?
+(A) 2013년 2월
+(B) 2016년 6월
+(C) 2017년 8월
+(D) 2015년 9월",(D),ewha,학칙,amendment,제26조⑥,6,자작 (ewha.pdf 원문으로 정답 확인),영어 문항
+E-019,"QUESTION19) 다음 중 학칙 제28조에 따른 제적 사유에 해당하지 않는 것은? (재입학 경력이 없는 학생 기준)
+(A) 휴학기간 경과 후 3주일 이내에 정당한 이유 없이 복학하지 아니한 자
+(B) 학사경고를 연속 2회 받은 자
+(C) 타교에 입학한 자
+(D) 징계에 의하여 퇴학처분을 받은 자",(B),ewha,학칙,negation,제28조; 제41조④,7;10,자작 (ewha.pdf 원문으로 정답 확인),
+E-020,"QUESTION20) 학칙상 징계의 종류에 해당하지 않는 것은?
+(A) 견책
+(B) 제적
+(C) 근신
+(D) 무기정학",(B),ewha,학칙,negation,제59조②,15,자작 (ewha.pdf 원문으로 정답 확인),
+E-021,"QUESTION21) 학년은 언제부터 시작하는가?
+(A) 1월 1일
+(B) 2월 1일
+(C) 3월 1일
+(D) 9월 1일",(C),ewha,학칙,fact,제10조①,2,자작 (ewha.pdf 원문으로 정답 확인),
+E-022,"QUESTION22) 학칙에 정기휴업일로 규정된 개교기념일은?
+(A) 5월 31일
+(B) 3월 1일
+(C) 8월 15일
+(D) 10월 9일",(A),ewha,학칙,fact,제12조①,3,자작 (ewha.pdf 원문으로 정답 확인),
+E-023,"QUESTION23) 조기졸업을 하려면 소정의 전 과정을 조기이수한 후 총 평균성적이 얼마 이상이어야 하는가?
+(A) 3.50
+(B) 3.70
+(C) 4.00
+(D) 3.75",(D),ewha,학칙,fact,제47조의3①,12,자작 (ewha.pdf 원문으로 정답 확인),
+E-024,"QUESTION24) 소속 학과 또는 전공 이외의 전공 교과목을 몇 학점 이상 취득하면 부전공을 이수한 것으로 인정하는가?
+(A) 15학점
+(B) 18학점
+(C) 21학점
+(D) 24학점",(C),ewha,학칙,fact,제47조③,11,자작 (ewha.pdf 원문으로 정답 확인),
+E-025,"QUESTION25) 학부생이 특례로 수강한 석사학위과정 교과목 학점 중 학사학위과정 졸업 또는 수료에 필요한 학점에 포함시킬 수 있는 최대 학점은?
+(A) 3학점
+(B) 6학점
+(C) 9학점
+(D) 12학점",(B),ewha,학칙,condition,제49조③,13,자작 (ewha.pdf 원문으로 정답 확인),
+E-026,"QUESTION26) 학점취득특별시험으로 취득할 수 있는 학점은 몇 학점을 초과할 수 없는가?
+(A) 12학점
+(B) 6학점
+(C) 9학점
+(D) 15학점",(A),ewha,학칙,fact,제35조의2①,8,자작 (ewha.pdf 원문으로 정답 확인),
+E-027,"QUESTION27) 입학전형관리위원회는 위원장 1인을 포함하여 몇 인 이내의 위원으로 구성하는가?
+(A) 7인
+(B) 10인
+(C) 12인
+(D) 15인",(D),ewha,학칙,fact,제17조의2①,4,자작 (ewha.pdf 원문으로 정답 확인),
+E-028,"QUESTION28) 추가시험에 관한 설명으로 옳은 것은?
+(A) 당해 학기말 시험기간 종료 후 2주일 이내에 한하여 실시할 수 있다.
+(B) 당해 학기말 시험기간 종료 후 1개월 이내에 실시할 수 있다.
+(C) 추가시험 성적은 반드시 두 등급 낮춘다.
+(D) 교과목 담당교수는 추가시험을 시행할 수 없다.",(A),ewha,학칙,multi,제42조①②,10,자작 (ewha.pdf 원문으로 정답 확인),
+E-029,"QUESTION29) 체육특기자의 대회출전 및 훈련으로 인한 출석대체인정은 1학기 수업시간의 얼마 이내로 하는가?
+(A) 4분의 1
+(B) 2분의 1
+(C) 3분의 1
+(D) 3분의 2",(B),ewha,학칙,fact,제40조③,10,자작 (ewha.pdf 원문으로 정답 확인),
+E-030,"QUESTION30) 신입생이 입학 후 첫 학기에 휴학할 수 있는 사유는?
+(A) 어학연수
+(B) 개인 여행
+(C) 아르바이트
+(D) 중대한 질병",(D),ewha,학칙,condition,제26조⑦,6,자작 (ewha.pdf 원문으로 정답 확인),
+E-031,"QUESTION31) 일반 학생의 통산 휴학 한도(년)를 a, 1회 휴학기간의 상한(년)을 b라 할 때 a+b의 값은?
+(A) 3
+(B) 5
+(C) 4
+(D) 6",(C),ewha,학칙,calc,제26조③④,6,자작 (ewha.pdf 원문으로 정답 확인),
+E-032,"QUESTION32) 등록기간 만료 전에 휴학원을 제출하여 허가를 얻은 학생의 등록금 처리로 옳은 것은?
+(A) 입학금을 포함한 전액을 면제한다.
+(B) 등록금의 절반을 면제한다.
+(C) 입학금을 제외한 당해 휴학기간의 등록금을 면제한다.
+(D) 면제하지 않는다.",(C),ewha,학칙,fact,제61조①,15,자작 (ewha.pdf 원문으로 정답 확인),
+E-033,"QUESTION33) 학칙 개정 절차로 옳은 것은?
+(A) 사전공고, 대학평의원회와 교무회의의 심의를 거쳐 총장이 행한다.
+(B) 이사회의 의결만으로 확정된다.
+(C) 교수회의 의결로 확정된다.
+(D) 총학생회의 동의를 받아 총장이 행한다.",(A),ewha,학칙,fact,제70조,17,자작 (ewha.pdf 원문으로 정답 확인),
+E-034,"QUESTION34) Under the Ewha Womans University regulations, how many credits are required for graduation in principle?
+(A) 120 credits
+(B) 129 credits
+(C) 130 credits
+(D) 140 credits",(B),ewha,학칙,fact,제48조①,12,자작 (ewha.pdf 원문으로 정답 확인),영어 문항
+E-035,"QUESTION35) According to the Ewha Womans University regulations, the maximum period of enrollment for pre-medical (의예과) students may not exceed how many years?
+(A) 2 years
+(B) 6 years
+(C) 8 years
+(D) 4 years",(D),ewha,학칙,condition,제24조②,5,자작 (ewha.pdf 원문으로 정답 확인),영어 문항
+M-LAW-00911,"QUESTION1) A state built a casino and issued bonds to finance its construction. On five occasions, there were episodes of violence in various casinos in the state. The state police attributed the violence to greed and fear at the casinos. To prevent such violence, the state legislature passes a statute prohibiting all gambling at privately owned casinos in the state. Is this law likely to be held constitutional if most casinos in the state were owned by those from out-of-state?
+(A) Yes, because the act was expressly authorized by the state legislature.
+(B) No, because the state does not have the authority to regulate commerce.
+(C) No, because this would infringe on the rights of out-of-state business owners.
+(D) Yes, but only if the casinos were given notice and an opportunity to be heard before the law was passed.
+(E) Yes, but only if the local interest in safety outweighs the burden of interstate commerce.
+(F) No, because the statute violates the due process rights of the owners of the casinos.
+(G) Yes, but only if the state can prove that the violence was directly caused by the casinos.
+(H) No, because out-of-state casinos are part of interstate commerce.
+(I) No, because the state cannot interfere with private businesses.
+(J) Yes, because the state has the power to regulate businesses within its borders.",(E),mmlu,law,knowledge,,,MMLU-Pro test qid=911 (ori_mmlu-professional_law),
+M-LAW-01451,"QUESTION2) A seller listed real property for $500,000, which was set to expire on Aug.1. The current lessee of the premises, who had made substantial improvements to the property, wanted to buy at the full list price but needed extra time. He paid $10,000 for an option to be added to the lease, giving him an option to buy on or before Sept. 1. The option stated that all notices required under it ""shall be deemed given if given in writing and delivered personally, delivered by commercial delivery service, or by certified mail return receipt requested, to the party to receive the Notice"" That notice was required by Sept. 1. Buyer called Seller on Aug. 25 and told her that he was exercising the option, but Seller did not remember the words used. The Buyer sent written intent to exercise it by first class mail on Aug. 29 but the Seller later testified that she did not receive it until September 3. On September 10 she notified Buyer that the option expired and the deal was off. Buyer filed a specific performance action to compel the transaction. Is it likely that the Equity Court will grant the request for specific performance?
+(A) No, because the option explicitly required that notices be delivered by one of the stated forms, and first class mail was not one of them.
+(B) Yes, the delay was minimal, the lessee would suffer hardship, and the wording of the notice requirement did not absolutely require one of the stated forms of notice.
+(C) Yes, because the Buyer made a good faith effort to notify the Seller within the required time.
+(D) No, because option contracts are strictly enforced and even a one-day delay cannot be allowed due to the need to have commercial predictability in such transactions.
+(E) Yes, because the Seller was informed of the Buyer's intent to exercise the option, regardless of the method of delivery.
+(F) No, because the Buyer did not fulfill the terms of the option within the allotted time.
+(G) No, because the Seller did not recall the phone conversation, and there's no proof of the same.
+(H) No, because the Seller would be prejudiced by having to sell after the option date.
+(I) Yes, the Seller was informed by phone call, which can be considered as personal delivery.",(B),mmlu,law,knowledge,,,MMLU-Pro test qid=1451 (ori_mmlu-professional_law),
+M-LAW-00923,"QUESTION3) Alice owned Greyacre, a one-acre piece of property, in fee simple. Alice sold the property to Barbara who moved into the only residence on the land. Barbara neglected to record the deed, and three years later, Alice conveyed the same property to Charlene who immediately filed the deed she received from Alice. Greyacre's jurisdiction has a race-notice statute and a tract index system. If an action is filed for title to the property, the likely outcome would be for
+(A) Alice, since her ownership was first in time and she was of record.
+(B) Barbara, because she was the first to record her deed.
+(C) Alice, since she made two valid sales of the same property.
+(D) Charlene, because she was the first to record her deed.
+(E) Barbara, due to her physical possession of the property.
+(F) Barbara, because Charlene had notice of the prior conveyance between Alice and Barbara.
+(G) Charlene, because she relied on Alice's representation of ownership.
+(H) Alice, as she never actually transferred the property rights.
+(I) Charlene, as Barbara did not officially record her deed.
+(J) Charlene, because she was the last to receive the deed from Alice.",(F),mmlu,law,knowledge,,,MMLU-Pro test qid=923 (ori_mmlu-professional_law),
+M-LAW-01484,"QUESTION4) Donny threw a knife at Sally, intending to injure her severely. However, Donny missed Sally. Sally saw the knife just as it whizzed by her head, missing it by about one inch. As a result, Sally was very scared. Sally sued Donny for assault and battery. Which of the following is most correct?
+(A) Donny will be liable for battery, but not assault.
+(B) Donny will not be liable for either assault or battery because he did not actually hit Sally with the knife.
+(C) Donny will be liable for assault, but not battery because he missed Sally with the knife.
+(D) Donny will be liable for assault and for battery.
+(E) Donny will not be liable for either assault or battery because this is only a criminal matter.
+(F) Donny will not be liable for either assault or battery because Sally was not physically harmed.
+(G) Donny will be liable for assault and battery because he intended to cause harm.
+(H) Donny will be liable for both assault and battery because Sally was terrified.
+(I) Donny will be liable for battery, but not assault because Sally was able to dodge the knife.
+(J) Donny will be liable for assault, but not battery.",(J),mmlu,law,knowledge,,,MMLU-Pro test qid=1484 (ori_mmlu-jurisprudence),
+M-LAW-01715,"QUESTION5) Justin's estate sues Polly for wrongful death. The estate calls Officer Friendly as a witness who interviewed Polly right after the event. Officer will testify that Polly said, ""Oops, I was cleaning my pistol and it went off and shot Justin. I sure was negligent!"" Is Officer's testimony admissible?
+(A) Yes, admission by party.
+(B) No, opinion on an ultimate issue that must be left for the jury.
+(C) Yes, because it's a spontaneous statement
+(D) No, because the statement was made under duress
+(E) Yes, because it's a recorded statement
+(F) No, because the statement was not made under oath
+(G) Yes, because it's an excited utterance
+(H) No, because the statement is prejudicial
+(I) No, hearsay without an exception.",(A),mmlu,law,knowledge,,,MMLU-Pro test qid=1715 (ori_mmlu-professional_law),
+M-LAW-00963,"QUESTION6) A car manufacturer produced a car that was sold nationwide. Problems with the car's brakes allegedly caused several accidents and injuries. Two individual buyers of the car each filed a class action, in different states, against the manufacturer, asserting the same products liability claims on behalf of all buyers nationwide. One class action was filed in federal court and the other was filed in state court. The parties in the federal action reached a court- approved settlement, and the court entered judgment dismissing the action with prejudice. The manufacturer's attorney has moved to dismiss the state court action on the basis of res judicata (claim preclusion). Should the state court look to federal or state law to decide the effect of the judgment?
+(A) Federal law, because the judgment was the result of a nationwide action governed by the federal class action rule.
+(B) Federal law, due to the nationwide scope of the car manufacturer's operations.
+(C) State law, because there is no general federal common law and preclusion is a common law doctrine.
+(D) State law, because the claim involves product liability, a matter of state law.
+(E) Federal law, because the judgment was entered in federal court.
+(F) Federal law, because the manufacturer's attorney filed the motion.
+(G) Federal law, because the claim involves a product that was sold nationwide.
+(H) State law, because the accidents and injuries happened in multiple states.
+(I) State law, because the second class action was filed in state court.",(E),mmlu,law,knowledge,,,MMLU-Pro test qid=963 (ori_mmlu-professional_law),
+M-LAW-01453,"QUESTION7) A defendant was charged with felony murder as a result of his setting fire to the victim's house. The victim was upstairs sleeping when the fire was set, and he died in his bedroom during the fire. If the defendant can prove the facts to support his defense, which of the following assertions would LEAST likely remove liability for felony murder?
+(A) The defendant was coerced by another to set the fire.
+(B) The defendant did not intend to kill the victim.
+(C) The defendant thought the house was empty when he set the fire.
+(D) The defendant believed the victim had already evacuated the house.
+(E) The defendant was insane when he set the fire.
+(F) The victim died of a heart attack before the fire spread to his bedroom.",(B),mmlu,law,knowledge,,,MMLU-Pro test qid=1453 (ori_mmlu-professional_law),
+M-LAW-00918,"QUESTION8) A woman went to a nearby supermarket late one night. She parked in the store's parking lot, and while walking toward the building two masked males assaulted and raped her. The lot was poorly lit, had no security personnel, and was frequented by gang members. The police had several incident reports in the past 12 months documenting prior criminal activities, including some personal robberies and assaults, in the lot. The store itself had even more reports than the police. The woman sued the store for her injuries, claiming that it breached its duty to make the premises reasonably safe for its customers. Will she likely prevail?
+(A) Yes, the store knew of previous criminal activities but did not take actions to prevent them.
+(B) No, the store owes no special duty of care to eliminate crime on the parking lot; it was up to the police to perform that task.
+(C) Yes, a store has a duty to protect its customers from all forms of harm.
+(D) No, the store cannot be held responsible for the actions of a third party.
+(E) No, the store cannot predict or prevent all possible criminal activities.
+(F) No, the occurrence of a rape of a customer was not a foreseeable event and the store had no duty to try and discover that such a potential danger could exist.
+(G) Yes, a store owner is the guarantor to every customer that he or she will be protected and safe when walking in the parking lot.
+(H) Yes, the store failed in its duty to provide adequate security measures.
+(I) No, the woman should have taken measures to protect herself.
+(J) Yes, a business will be liable for known conditions in the building or adjoining parking areas that are a danger to the personal safety and security of its customers.",(J),mmlu,law,knowledge,,,MMLU-Pro test qid=918 (ori_mmlu-professional_law),
+M-LAW-00974,"QUESTION9) Is the ICJ hostile to the idea that an armed attack may arise through a series of lower intensity, yet cumulative, instances of armed force?
+(A) The ICJ has often supported the accumulation theory
+(B) The ICJ considers each instance of armed force individually, not cumulatively
+(C) The ICJ has never addressed this issue
+(D) The concept of an armed attack refers to a single attack, not multiple smaller instances of armed force
+(E) The ICJ has shown mixed views on the accumulation theory
+(F) In the Nicaragua case the ICJ dismissed the accumulation theory
+(G) The ICJ was not hostile to the accumulation theory
+(H) The ICJ has consistently rejected the concept of an armed attack arising from cumulative instances
+(I) The ICJ has yet to make a definitive ruling on the accumulation theory
+(J) The ICJ ruled in favor of the accumulation theory in the Bosnia and Herzegovina case",(G),mmlu,law,knowledge,,,MMLU-Pro test qid=974 (ori_mmlu-international_law),
+M-LAW-01550,"QUESTION10) A national association brought suit in federal court against a city. The suit charged the city with violating several federal statutes. During the trial, the association's attorney called the city attorney as an adverse witness. The city attorney asserted the attorney-client privilege and objected that the matters communicated to him were intended to be confidential. The issues raised by the objections of the city attorney should be resolved under
+(A) the privilege law of the state where the national association is located.
+(B) the privilege law of the state where the city is located.
+(C) either federal privilege law or the privilege law of the forum state as determined by the court.
+(D) city’s privilege law.
+(E) either federal privilege law or the privilege law of the city as determined by the court.
+(F) either federal privilege law or the privilege law of the forum state, whichever the court determines is more likely to admit the evidence.
+(G) federal privilege law.
+(H) federal privilege law or international privilege law, as determined by the court.
+(I) the privilege law of the forum state.
+(J) international privilege law.",(G),mmlu,law,knowledge,,,MMLU-Pro test qid=1550 (ori_mmlu-professional_law),
+M-LAW-01323,"QUESTION11) A contractor learned that a city intended to open a new grammar school and was going to ask for bids to construct the school. The contractor decided to submit a bid to do the construction. The contractor contacted all of the subcontractors she had worked with in the past, informed them of the specifics of the school construction project, and asked each to submit a bid for the work they would be requested to perform. An insulation company submitted a bid of $25,000 to do the required insulation work in the new school. Based on that and other subcontract bids, the contractor prepared a general bid and submitted it to the city. Three days after the contractor submitted the bid to the city, the insulation company notified the contractor that it had overbooked its workforce and would be unable to perform the insulation work. The next day, the city notified the contractor that she had won the bid to build the school. The contractor was forced to find another company to do the insulation work. The other company charged the contractor $30,000 to do the insulation. Which of the following arguments best supports the claim for $5,000 by the contractor against the insulation company?
+(A) An option contract was created, because the contractor used the insulation company's bid in computing the bid it submitted to the city and notified the insulation company of that fact.
+(B) The contractor had made an offer to the insulation company that the latter accepted when it submitted its bid.
+(C) The contractor had the right to rely on the insulation company's bid in calculating its own bid to the city.
+(D) The insulation company's bid was a firm offer that it could not withdraw without the contractor's agreement.
+(E) The contractor and the insulation company had a valid contract that the insulation company breached by failing to perform the work.
+(F) The insulation company had made an offer that the contractor accepted by using the insulation company's bid in computing the bid it submitted to the city.
+(G) The insulation company had a duty to honor its bid because the contractor had relied on it in good faith.
+(H) The insulation company breached a contract when it failed to perform the insulation work.
+(I) The contractor suffered damages as a direct result of the insulation company's failure to perform the agreed work.
+(J) The insulation company's bid was an offer that it was obligated to hold open, because the insulation company and the contractor were merchants.",(A),mmlu,law,knowledge,,,MMLU-Pro test qid=1323 (ori_mmlu-professional_law),
+M-LAW-01141,"QUESTION12) A man and a woman were involved in a car accident that occurred when the man abruptly switched lanes in front of the woman without signaling. Unable to stop, the woman hit the man's car into a median. Immediately after the accident, as the two drivers emerged from their vehicles, a pedestrian, obviously emotional and upset from having just observed an accident, ran up to the man and shouted, ""You careless driver, you. Didn't you ever learn that you're supposed to use a turn signal when you switch lanes?"" The pedestrian is never identified and is not present at trial. The pedestrian's statement is
+(A) inadmissible, because the bystander was not involved in the accident.
+(B) admissible, because it is relevant to the case.
+(C) admissible under the excited utterance exception.
+(D) admissible as non-hearsay.
+(E) admissible, even though it is hearsay.
+(F) admissible under the present sense impression exception.
+(G) inadmissible, because it is an opinion, not a fact.
+(H) inadmissible, because the bystander cannot be identified and is not present at trial.
+(I) inadmissible, because it is prejudicial to the defendant.
+(J) admissible under the spontaneous statement exception.",(C),mmlu,law,knowledge,,,MMLU-Pro test qid=1141 (ori_mmlu-professional_law),
+M-LAW-01597,"QUESTION13) There is a voting law that is going to be reviewed by the court. If the law is upheld, what must be true?
+(A) The law is necessary for a legitimate government purpose.
+(B) The law is rationally related to an important government purpose.
+(C) The law is unnecessarily related to a compelling government purpose.
+(D) The law is substantially related to an important government purpose.
+(E) The law is necessary to achieve a compelling government purpose.
+(F) The law is moderately related to a compelling government purpose.
+(G) The law is rationally related to a legitimate government purpose.
+(H) The law is vaguely related to a significant government purpose.
+(I) The law is substantially unrelated to any government purpose.
+(J) The law is substantially related to a legitimate government purpose.",(E),mmlu,law,knowledge,,,MMLU-Pro test qid=1597 (ori_mmlu-professional_law),
+M-LAW-01736,"QUESTION14) A landlord was the owner of a vacant warehouse. On May 1, the landlord leased the warehouse to the tenant for a term of five years with a renewable option. The leasehold agreement provided in part:""The tenant hereby acknowledges that certain areas of the leased premises are in a state of disrepair and unsafe for the conduct of business. Nonetheless, the tenant agrees to assume full responsibility for the necessary repairs. Furthermore, the tenant agrees to indemnify the landlord for any loss resulting from the condition of the said premises. ""Under the terms of the lease, the landlord delivered possession of the warehouse to the tenant on May 2. On that date, an employee of the tenant was working in the warehouse. He was moving some equipment into the warehouse when a section of the ceiling collapsed and fell on him. At the time the landlord and the tenant entered into their lease, only the landlord was aware that the ceiling was defective and needed to be repaired. Although the landlord could have remedied the defect before delivering possession to the tenant, the landlord didn't perform any repair work on the ceiling. The employee initiated suit against the landlord to recover damages resulting from his injury. There are no applicable statutes. If the employee prevails it will be because a
+(A) landowner's duty of care to third parties cannot be shifted to a tenant by the tenns of a lease.
+(B) tenant is responsible for all injuries occurring on the property once possession has been transferred.
+(C) tenant cannot waive the implied warranty of commercial habitability.
+(D) landlord is absolved of all responsibilities once a lease agreement is signed.
+(E) landlord's failure to repair the defect is not relevant to the case.
+(F) covenant to indemnify by a tenant in favor of a land owner is against public policy.
+(G) tenant's employee was not protected under the leasehold agreement.
+(H) landowner is strictly liable for injuries occurring on his property.
+(I) landlord's duty of care to a tenant can be transferred through a lease agreement.
+(J) tenant's acknowledgment of the state of disrepair absolves the landlord of any liability.",(A),mmlu,law,knowledge,,,MMLU-Pro test qid=1736 (ori_mmlu-professional_law),
+M-LAW-01905,"QUESTION15) There has been a great deal of news media coverage regarding the problem of underage drinking. Many high school and college students have been purchasing fraudulent driver's licenses with phony birthdates showing ""proof' of being 21 years of age or older. As a consequence, many teenagers are able to purchase alcoholic beverages at liquor stores, restaurants, and bars. The situation is becoming especially alarming on many college campuses. A magazine article reported that the majority of freshmen between the ages of 18 and 19 at many colleges had illegally purchased evidence of phony ""proof. ""With underage drinking reaching epidemic proportions, Congress enacted a statute establishing a federal commission to monitor and curtail alcoholic beverage sales to underage drinkers. To implement the program on a national scale, the bill required each state to pass legislation establishing a local ""watchdog"" agency to facilitate compliance with congressional intent. A state has filed suit challenging the constitutionality of the federal statute. The law is likely to be held
+(A) valid, because the Twenty First Amendment grants the federal government the power to control the sale and consumption of alcohol.
+(B) valid, because the federal government has the power to regulate all activities that substantially affect interstate commerce.
+(C) valid, because the establishment of a state watchdog agency under the auspices of a federal regulatory scheme is consistent with the provisions of the Twenty First Amendment.
+(D) valid, because the sale of alcoholic beverages has a substantial impact on interstate commerce.
+(E) invalid, because it violates the Tenth Amendment's reservation of powers to the states.
+(F) invalid, because it violates the fundamental principles of state sovereignty embodied by the Eleventh Amendment.
+(G) invalid, because the federal government cannot force states to implement federal regulations.
+(H) invalid, because it infringes on the state's right to regulate activities within their own borders.
+(I) invalid, because the federal government may not compel state legislatures to enact and enforce a federal regulatory program.
+(J) valid, because the federal government has the authority to regulate issues of national concern.",(I),mmlu,law,knowledge,,,MMLU-Pro test qid=1905 (ori_mmlu-professional_law),
+M-PSY-02694,"QUESTION16) Which of the following is not an available tool for assessing suicide risk?
+(A) Suicide Risk Identification Tool
+(B) Suicide Risk Assessment Manual
+(C) Mood Disorder Questionnaire
+(D) Beck Hopelessness Scale
+(E) Beck Scale for Suicidal Ideation
+(F) The Suicide Action Questionnaire
+(G) Oxford Happiness Questionnaire
+(H) Suicidal Ideation Questionnaire
+(I) Depression Anxiety Stress Scales
+(J) Mental Health Inventory",(F),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2694 (ori_mmlu-professional_psychology),
+M-PSY-02787,"QUESTION17) Discuss the psychological effects of marijuana intoxicationincluding its effects on perception, emotions, cognitive processes, memory, identity, time sense, performance.
+(A) Marijuana intoxication has no effect on cognitive processes or emotions
+(B) Marijuana intoxication primarily affects memory, with no significant impact on perception, emotions, or cognitive processes.
+(C) Marijuana intoxication dulls perception and decreases sensory experiences
+(D) Marijuana intoxication causes a significant increase in long-term memory retention and sharpens identity perception.
+(E) Marijuana intoxication has a temporary enhancing effect on academic and physical performance.
+(F) Marijuana intoxication improves memory and increases movement
+(G) Marijuana intoxication enhances perception, increases sensory pleasure, amplifies emotions, alters cognitive processes, affects memory, changes identity perception, affects time sense and decreases movement.
+(H) Marijuana intoxication leads to enhanced cognitive processes and improved problem-solving abilities.
+(I) Marijuana intoxication induces a state of unaltered emotions and leaves the sense of identity and time perception intact.
+(J) Marijuana intoxication results in heightened time sense accuracy and faster reaction times.",(G),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2787 (stemez-Psychology),
+M-PSY-02053,"QUESTION18) What is an attitude?
+(A) a learned skill that improves with practice
+(B) a definitive decision made based on facts
+(C) an emotional state that varies frequently
+(D) a set of behaviors that are consistent across different situations
+(E) a moral judgment that defines right or wrong actions
+(F) a relatively stable and enduring tendency to react positively or negatively to a particular person, object, situation, or event
+(G) a cognitive ability to solve complex problems
+(H) a temporary reaction to a situation
+(I) a biological impulse triggered by environmental factors
+(J) a physical response to a stimulus",(F),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2053 (stemez-Psychology),
+M-PSY-02527,"QUESTION19) Children develop internal representational systems that allow them verbally to describe people, events, and feelings during which of Piaget's stages of cognitive development?
+(A) Symbolic
+(B) Postoperational
+(C) Concrete operational
+(D) Sensorimotor
+(E) Foundational
+(F) Reflexive
+(G) Transitional
+(H) Preoperational
+(I) Formal operational
+(J) Abstract operational",(H),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2527 (ori_mmlu-high_school_psychology),
+M-PSY-02056,"QUESTION20) When an adult mouse or bird is castrated, its sexual behavior virtually disappears. Compare the effects of castration of highly developed primates with the less developed animals.
+(A) In higher primates such as man, castration does not affect the ability to perform the sexual act, provided the male is sexually mature and experienced.
+(B) In primates, castration after sexual maturity reduces aggression but has no effect on sexual behavior.
+(C) Primates show a temporary decline in sexual behavior post-castration, but it fully recovers within weeks.
+(D) Castration in primates results in complete loss of sexual behavior
+(E) Castration in primates has no effect on their sexual behavior at any stage of development.
+(F) Castration of primates leads to an increase in sexual behavior due to hormonal imbalances.
+(G) Castration affects the ability to perform sexual acts in all animals
+(H) Primates can't learn sexual behavior through experience
+(I) Castration of primates causes a permanent shift to non-sexual social behavior patterns.
+(J) In higher primates, castration before puberty prevents the development of sexual behavior entirely.",(A),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2056 (stemez-Psychology),
+M-PSY-02754,"QUESTION21) A graduate student’s dissertation chair, Dr. X, turns out to be of little help, and the student ends up obtaining advice and assistance from an associate professor, Dr. Z. Dr. X does review the dissertation when it is completed and she is listed as the dissertation chair. Several months later, the student decides to write an article for a professional journal that is based his dissertation research. In terms of publication credit:
+(A) Dr. Z should not be listed as an author since she is not the student's official dissertation chair.
+(B) Dr. Y and Dr. Z should be listed as co-authors.
+(C) Dr. X should be listed as second author since she was the student’s official dissertation chair.
+(D) The student should be the sole author as the research is based on his dissertation.
+(E) Dr. X should be listed as first author since she was the student’s official dissertation chair.
+(F) Dr. Z should be listed as first author if her contribution was substantial.
+(G) Dr. X and Dr. Z should be listed as co-authors with no particular order.
+(H) Dr. Z should be listed as second author if her contribution warrants it.
+(I) Dr. X should be listed as second author and Dr. Z should not be included as an author.
+(J) Dr. Z should be listed as first author, and the student should be listed as second author.",(H),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2754 (ori_mmlu-professional_psychology),
+M-PSY-02375,"QUESTION22) What is cross-validation and why is it important?
+(A) Cross-validation is only used for validating models in large datasets and is not suitable for small datasets
+(B) Cross-validation is a method for enhancing the complexity of a model to improve its performance on a single data set
+(C) Cross-validation is not important in small samples
+(D) Cross-validation is a method to independently determine the validity of a test on additional samples, it is necessary especially when the initial validation sample is small, to avoid errors and chance factors.
+(E) Cross-validation involves using different tests to measure the same variable to ensure the tests agree with each other
+(F) Cross-validation is a process where the performance of a test is only assessed once to ensure speed and efficiency
+(G) Cross-validation is a method to validate a test without additional samples
+(H) Cross-validation is a technique to assess the performance of a model by splitting the data into two sets: one for training and one for final testing
+(I) Cross-validation is the replication of a test using the same dataset to confirm the initial results
+(J) Cross-validation is a method to determine the validity of a test on the same sample",(D),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2375 (stemez-Psychology),
+M-PSY-02684,"QUESTION23) Consider the distribution of the previous problem. Let us add 2 relatively high values in order to observe the differential effecton the three measures of central tendency. Use the followingeight ordered values: 3, 5, 6, 6, 7, 9, 16, 20.
+(A) Mean is unaffected, median is somewhat affected, mode is most affected
+(B) Median is most affected, mean is somewhat affected, mode is unaffected
+(C) All measures are unaffected
+(D) Mean and median are equally affected, mode is most affected
+(E) All measures are equally affected
+(F) Mean is most affected, median is somewhat affected, mode is unaffected
+(G) Median is unaffected, mean and mode are equally affected
+(H) Mode and median are equally affected, mean is unaffected
+(I) Mode is unaffected, mean is somewhat affected, median is most affected
+(J) Mode is most affected, median is somewhat affected, mean is unaffected",(F),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2684 (stemez-Psychology),
+M-PSY-02639,"QUESTION24) An organizational psychologist would most likely recommend the use of vestibule training for which of the following jobs?
+(A) receptionist
+(B) word processor
+(C) high school teacher
+(D) clinical psychologist.
+(E) software developer
+(F) salesperson.
+(G) newspaper journalist
+(H) airline pilot
+(I) bus driver
+(J) restaurant waiter",(H),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2639 (ori_mmlu-professional_psychology),
+M-PSY-02621,"QUESTION25) Current legal and ethical standards require that a treatment record be kept for each patient. At the minimum, this treatment record should include
+(A) Diagnoses; initial findings; dates of service and billing; patient's fantasies and cognitions
+(B) Diagnoses; treatment plan; dates of service and billing; progress in the treatment plan
+(C) Initial findings; treatment plan; dates of service and billings; patient's progress
+(D) initial findings: consent of patient's cognitions, reveries, and fantasies; dares of service and billings patient's progress
+(E) initial findings; dates of service and billing; patient's progress
+(F) diagnoses; initial findings; treatment plan; dates of service and billing; progress in the treatment plan
+(G) Diagnoses; initial findings; treatment plan; consent of patient's cognitions, reveries, and fantasies; dates of service and billings
+(H) diagnoses; initial findings; content of patient's cognitions, reveries, and fantasies; dates of service and billing; progress in the treatment plan
+(I) Diagnoses; initial findings; content of patient's cognitions, reveries, and fantasies; progress in the treatment plan
+(J) Initial findings; consent of patient's cognitions, reveries, and fantasies; dates of service and billings; patient's progress",(F),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2621 (ori_mmlu-professional_psychology),
+M-PSY-02055,"QUESTION26) Have studies on learning supported the Incremental or the One-trial Theory of learning?
+(A) Incremental Theory is supported in cognitive tasks, while One-trial Theory is supported in motor tasks.
+(B) The Incremental Theory is universally supported, while the One-trial Theory has been completely discredited.
+(C) Studies support the One-trial Theory in the short term, but the Incremental Theory in the long term.
+(D) Studies support a hybrid model that combines elements of both theories.
+(E) One-trial Theory is supported for simple tasks, while Incremental Theory is for complex tasks.
+(F) Neither theories of learning are correct.
+(G) Both theories of learning are correct, depending on the context.
+(H) The Incremental Theory is only supported in animal studies, while the One-trial Theory is supported in human studies.
+(I) Only One-trial Theory of learning is supported.
+(J) Only Incremental Theory of learning is supported.",(G),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2055 (stemez-Psychology),
+M-PSY-02278,"QUESTION27) In test construction and evaluation, validity refers to the degree to which a test
+(A) includes a diverse range of question types
+(B) has been piloted and statistically analyzed
+(C) yields consistent results on successive administrations
+(D) has questions that are closely related to each other
+(E) can be completed within a reasonable time frame
+(F) includes norms based on a representative sample of the general population
+(G) is applicable to a wide range of individuals
+(H) is easy for the test taker to understand
+(I) measures what it purports to measure
+(J) has been approved by a recognized testing body",(I),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2278 (ori_mmlu-high_school_psychology),
+M-PSY-02632,"QUESTION28) Among women, which of the following subgroups has been shown to be the most frequent users of suicide prevention services
+(A) Young ethnic minority women
+(B) Elderly Caucasian women
+(C) Elderly ethnic minority men
+(D) Middle-aged Caucasian women
+(E) Young Caucasian women
+(F) Elderly ethnic minority women
+(G) Young ethnic minority men
+(H) Elderly Caucasian men
+(I) Middle-aged ethnic minority women
+(J) Young Caucasian men",(E),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2632 (ori_mmlu-professional_psychology),
+M-PSY-02057,"QUESTION29) What are some of the theories which support a belief that aggression is necessary?
+(A) ""Aggressive Energy"" theory and ""Natural Born Killer"" theory
+(B) ""Game"" theory and ""Cognitive Neoassociation"" theory
+(C) ""Psychoanalytic"" theory and ""Drive"" theory
+(D) ""Dominance"" theory and ""Behaviorist"" theory
+(E) ""Evolution"" theory and ""Conflict"" theory
+(F) ""Social Learning"" theory and ""Biological"" theory
+(G) ""Survival of the fittest"" theory and ""Catharsis"" theory",(G),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2057 (stemez-Psychology),
+M-PSY-02319,"QUESTION30) What is validity?
+(A) Validity is the extent to which a test can be administered in different languages.
+(B) Validity is whether the test measures what the examiner wants it to measure and how well it measures it.
+(C) Validity is based solely on empirical evidence.
+(D) Validity is the degree to which a test predicts future performance.
+(E) Validity is the reliability of a test.
+(F) Validity is the level of difficulty of a test.
+(G) Validity is the length of time a test remains applicable.
+(H) Validity is the ease with which test results can be compared across different populations.
+(I) Validity is the consistency of test results over time.
+(J) Validity is the subjective interpretation of a test.",(B),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2319 (stemez-Psychology),
+M-BUS-00833,"QUESTION31) A debt of $25,000 is to be amortized over 7 years at 7% interest. What value of monthly payments will achieve this?
+(A) $4925.00
+(B) 4500.00
+(C) $4750.00
+(D) $4333.33
+(E) $4100.00
+(F) $3500.00
+(G) $3895.67
+(H) 4638.83
+(I) 5000.00
+(J) 4800.00",(H),mmlu,business,knowledge,,,MMLU-Pro test qid=833 (theoremQA-Finance),
+M-BUS-00109,"QUESTION32) Mr. Castle will buy one of two 10-HP motors offered to him. Motor A sells for $169 and has a full-load efficiency of 85.2%. Motor B costs $149 and has a full-load efficiency of 82.1%. The annual inspection and maintenance fee on both motors is 14.5% of the price. If electric energy costs 2.35 cents per kilowatt hour (1 HP = 0.746kw.) find the number of hours per year at which the cost of both motors will be the same.
+(A) 450 hours
+(B) 400 hours
+(C) 600 hours
+(D) 300 hours
+(E) 325 (1 / 3) hours
+(F) 275 (1 / 2) hours
+(G) 350 hours
+(H) 500 hours
+(I) 425 hours
+(J) 374 (2 / 3) hours",(J),mmlu,business,knowledge,,,MMLU-Pro test qid=109 (stemez-Business),
+M-BUS-00283,"QUESTION33) Steve King buys dress slacks on sale at $33.15 for two pairs, the sales tax is 5.5%. How much does he pay for four pairs of slacks?
+(A) $68.40
+(B) $74.10
+(C) $71.85
+(D) $67.00
+(E) $72.00
+(F) $69.95
+(G) $65.80
+(H) $66.30
+(I) $70.50
+(J) $73.20",(F),mmlu,business,knowledge,,,MMLU-Pro test qid=283 (stemez-Business),
+M-BUS-00271,"QUESTION34) Consider an arbitrage-free securities market model, in which the risk-free interest rate is constant. There are two nondividend-paying stocks whose price processes are:
+$S_1(t)=S_1(0)e^{0.1t+0.2Z(t)}$
+$S_2(t)=S_2(0)e^{0.125t+0.3Z(t)}$
+where $Z(t)$ is a standard Brownian motion ant $t\ge0$. What is the continuously compounded risk-free interest rate?
+(A) 0.08
+(B) 0.025
+(C) 0.02
+(D) 0.09
+(E) 0.01
+(F) 0.03
+(G) 0.06
+(H) 0.05
+(I) 0.07
+(J) 0.04",(C),mmlu,business,knowledge,,,MMLU-Pro test qid=271 (theoremQA-Finance),
+M-BUS-00307,"QUESTION35) The enforcement of company privacy is complex as corporations are somewhat __________, as there are few clear barriers to define their limits, it is difficult to _________ due to the number of individuals involved and much corporate activity takes place in ________.
+(A) Public spaces, Control information, Public spaces
+(B) Boundaryless, Maintain individual privacy, Private spaces
+(C) Public spaces, Maintain individual privacy, Private spaces
+(D) Boundaryless, Control information, Private spaces
+(E) Private spaces, Control information, Public spaces
+(F) Private spaces, Maintain individual privacy, Public spaces
+(G) Boundaryless, Maintain individual privacy, Public spaces
+(H) Public spaces, Control information, Private spaces
+(I) Boundaryless, Control information, Public spaces
+(J) Private spaces, Maintain individual privacy, Private spaces",(I),mmlu,business,knowledge,,,MMLU-Pro test qid=307 (ori_mmlu-business_ethics),
+M-BUS-00287,"QUESTION36) An automobile that cost $3,000 four years ago is now worth $1,000. What is the average yearly depreciation?
+(A) $300
+(B) $2,000
+(C) $250
+(D) $1,000
+(E) $800
+(F) $400
+(G) $500
+(H) $600
+(I) $750
+(J) $1,250",(G),mmlu,business,knowledge,,,MMLU-Pro test qid=287 (stemez-Business),
+M-BUS-00624,"QUESTION37) ____________ is very effective at delivering messages to target audiences as it allows for explanation in a way that most other media cannot.
+(A) Broadcast.
+(B) Social Media.
+(C) Direct Mail.
+(D) Guerrilla Marketing.
+(E) Digital.
+(F) Email Marketing.
+(G) Word-of-Mouth.
+(H) Outdoor.
+(I) Print.
+(J) Event Marketing.",(I),mmlu,business,knowledge,,,MMLU-Pro test qid=624 (ori_mmlu-marketing),
+M-BUS-00679,"QUESTION38) BaskowToys Wholesalers is offering Albee Stores the new Captain Kirk doll at 25-20% off the retail price. If Albee Stores is buying each doll for $2.10, for what will it sell the dolls, i.e., what is the retail price?
+(A) $3.50
+(B) $7.00
+(C) $6.00
+(D) $4.50
+(E) $4.00
+(F) $5.00
+(G) $2.50
+(H) $3.00
+(I) $5.50
+(J) $2.80",(A),mmlu,business,knowledge,,,MMLU-Pro test qid=679 (stemez-Business),
+M-BUS-00373,"QUESTION39) Mr. Joseph Miles and Mr. Gary Rose are partners in a manufacturing company. Mr. Miles receives a salary of $600 a month, and the balance of the profits is to be divided equally. During their first year, profits were $6,000. How much did each receive?
+(A) Mr. Miles received $7,800 and Mr. Rose received $1,800
+(B) Mr. Miles received $3,600 and Mr. Rose received $2,400
+(C) Mr. Miles received $6,000 and Mr. Rose received $600
+(D) Mr. Miles received $6,600 and Mr. Rose lost $600
+(E) Mr. Miles received $8,400 and Mr. Rose received $2,400
+(F) Mr. Miles received $9,000 and Mr. Rose received $3,000
+(G) Mr. Miles received $4,800 and Mr. Rose received $1,200
+(H) Mr. Miles received $5,400 and Mr. Rose received $600
+(I) Mr. Miles received $7,200 and Mr. Rose lost $600
+(J) Mr. Miles received $7,200 and Mr. Rose received $600",(D),mmlu,business,knowledge,,,MMLU-Pro test qid=373 (stemez-Business),
+M-BUS-00208,"QUESTION40) You are asked to determine the price of a European put option on a stock. Assuming the Black-Scholes framework holds, you are given: (i) The stock price is $100. (ii) The put option will expire in 6 months. (iii) The strike price is $98. (iv) The continuously compounded risk-free interest rate is r = 0.055. (v) δ = 0.01 (vi) σ = 0.50. What is the price of the put option?
+(A) 16.4
+(B) 9.7
+(C) 11.9
+(D) 15.6
+(E) 13.1
+(F) 14.2
+(G) 7.8
+(H) 8.5
+(I) 12.3
+(J) 10.5",(C),mmlu,business,knowledge,,,MMLU-Pro test qid=208 (theoremQA-Finance),
+M-BUS-00397,"QUESTION41) George sells vacuum cleaners for $75 each. He receives a 30% commission on each cleaner. Last week he sold 13 machines. What were his total earnings?
+(A) $325.50
+(B) $650
+(C) $585
+(D) $405
+(E) $975
+(F) $75
+(G) $487.50
+(H) $350
+(I) $225
+(J) $292.50",(J),mmlu,business,knowledge,,,MMLU-Pro test qid=397 (stemez-Business),
+M-BUS-00290,"QUESTION42) On October 17, Thomas Long purchased two $1,000 bonds, bearing 6% interest payable January 1 and July 1, at 98. Find his total cost, and the net proceeds to the seller. Assume a brokerage fee of $5 per bond.
+(A) $2,006 and $1,996
+(B) $1,990 and $1,970
+(C) $2,015 and $1,995
+(D) $2,006 and $1,986
+(E) $2,020 and $2,000
+(F) $2,010 and $1,980
+(G) $1,960 and $1,986
+(H) $2,000 and $1,970
+(I) $1,995 and $1,975
+(J) $1,980 and $1,960",(D),mmlu,business,knowledge,,,MMLU-Pro test qid=290 (stemez-Business),
+M-BUS-00246,"QUESTION43) Costs for producing one widget: Materials:2 parts (a) $25.00 per part Expenses :$10.00 Labor :20 operations (a) $5.00 per operation Based on the above information, which is the only valid conclusion? (A) The selling price should be $160 per widget. (B) labor rates are excessive (C) output is labor intensive (D) material costs are low
+(A) Each widget requires $50.00 in labor for 10 operations
+(B) Material costs represent the smallest fraction of the total production cost
+(C) output is labor intensive
+(D) material costs are low
+(E) Expenses are greater than the combined costs of materials and labor
+(F) The selling price should be $160 per widget
+(G) The most significant cost in producing a widget is the expense fee
+(H) labor rates are excessive
+(I) The total cost of production is less than $100 per widget
+(J) There are 10 operations involved in labor, each at $10.00 per operation",(C),mmlu,business,knowledge,,,MMLU-Pro test qid=246 (stemez-Business),
+M-BUS-00582,"QUESTION44) As a result of a blow-out, Frank Lincoln's car swerved and hit John Martin's car.Leon Taylor, a passenger in Mr. Martin's car, had medical expenses of $6,251. Mr. Martin's medical billscame to $75. If Lincoln had 5/10 bodily injury insurance, howmuch will his insurance company pay?
+(A) $5,251
+(B) $11,000
+(C) $6,251
+(D) $10,326
+(E) $10,000
+(F) $6,326
+(G) $5,075
+(H) $7,500
+(I) $6,000
+(J) $5,000",(G),mmlu,business,knowledge,,,MMLU-Pro test qid=582 (stemez-Business),
+M-BUS-00240,"QUESTION45) Daniel receives at 6.5% commission on all sales. If he received a $275.08 commission, what were his sales?
+(A) $3200
+(B) $4750
+(C) $2600
+(D) $5000
+(E) $4243
+(F) $4230
+(G) $4000
+(H) $4500
+(I) $3500
+(J) $3000",(E),mmlu,business,knowledge,,,MMLU-Pro test qid=240 (stemez-Business),
+M-PHI-11270,"QUESTION46) Huemer worries that the employment of a ""war"" metaphor when describing government policies about drug use
+(A) does not really describe the situation well at all, since it is more like a game than a war.
+(B) diminishes the seriousness of actual wars.
+(C) masks a bad argument by analogy.
+(D) is perfectly apt.
+(E) makes it hard to think and discuss the rights of drug users.
+(F) indicates that the issue can only be solved through violent measures.
+(G) implies that the government is the enemy.
+(H) suggests that drug users are combatants.",(E),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11270 (ori_mmlu-moral_disputes),
+M-PHI-10850,"QUESTION47) One objection to Singer’s theory that he considers is that it:
+(A) inappropriately makes proximity morally important.
+(B) fails to consider the cultural differences in moral norms.
+(C) overlooks the role of government and institutions in addressing suffering.
+(D) does not do enough to address suffering in other countries besides our own.
+(E) does not account for the fact that we have stricter obligations to our loved ones than to strangers.
+(F) does not address the issue of moral obligations to non-human animals.
+(G) ignores the importance of self-interest in human behavior.
+(H) assumes that all individuals have the same capacity to alleviate suffering.
+(I) does not provide a clear definition of what constitutes suffering.
+(J) requires too drastic a revision to our moral scheme.",(J),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10850 (ori_mmlu-philosophy),
+M-PHI-11011,"QUESTION48) I don't understand why everyone thinks they belong in college. After all, everyone knows that when you are intelligent you'll succeed. But so many people that elect to attend college don't have even the most basic intelligence. How do they expect to get anywhere here?
+(A) Attacking the Person (ad hominem)
+(B) Straw Man
+(C) Denying the Antecedent
+(D) Begging the Question",(C),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11011 (ori_mmlu-logical_fallacies),
+M-PHI-10952,"QUESTION49) Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)
+~C ⊃ D
+D ⊃ C / C
+(A) Invalid. Counterexample when C is true and D is false
+(B) Invalid. Counterexample when D is false and C is true
+(C) Invalid. Counterexample when C and D are true
+(D) Invalid. Counterexample when C and D are both false
+(E) Invalid. Counterexample when C is false and D is true
+(F) Invalid. Counterexample when D is true and C is false
+(G) Valid
+(H) Valid. No counterexample exists
+(I) Invalid. Counterexample when D and C are both true",(G),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10952 (ori_mmlu-formal_logic),
+M-PHI-11018,"QUESTION50) Mill defines “utility” as:
+(A) advantage or benefit to the user.
+(B) usefulness for some craft.
+(C) the ability to satisfy wants and needs.
+(D) usefulness to an individual.
+(E) it promotes the interests of all and does not harm anyone.
+(F) it promotes self-interest.
+(G) the state of being useful, profitable, or beneficial.
+(H) pleasure and the absence of pain.
+(I) usefulness to society.
+(J) it benefits the majority and harms the minority.",(H),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11018 (ori_mmlu-philosophy),
+M-PHI-11210,"QUESTION51) Baier argues that genuine moral rules:
+(A) must take into account the interests of all living beings.
+(B) make take into account the interests of all sentient beings.
+(C) should primarily focus on preserving the natural environment.
+(D) must align with societal norms and expectations.
+(E) are based solely on religious doctrines.
+(F) must be for the good of human beings.
+(G) should be universally applicable regardless of cultural differences.
+(H) must only consider the interests of the individual making the moral decision.
+(I) are primarily directed toward promoting self-interest.
+(J) are only applicable to those who choose to follow them.",(F),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11210 (ori_mmlu-philosophy),
+M-PHI-10932,"QUESTION52) E.F. Schumacher, famous economist, in an article in the Atlantic (April 1979): Fifteen months [after I had advised that rural India should have a technology intermediate between the hoe and the tractor,] an all-India conference on intermediate technology was arranged. (They still didn't like the term [intermediate], so they called it appropriate technology. That's all right: when I come to India and somebody says, ""Oh, Mr. Schumacher, I don't believe in appropriate technology"", I just look him straight in the face and say, ""Oh, that's splendid. Do you believe in inappropriate technology?"")
+(A) Equivocation
+(B) Inconsistency
+(C) Appeal to Authority
+(D) Prejudicial Language",(A),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10932 (ori_mmlu-logical_fallacies),
+M-PHI-10832,"QUESTION53) Mani referred to God by which of the following names?
+(A) Eternal Spirit
+(B) Divine Guardian
+(C) Light Bringer
+(D) Heavenly Guide
+(E) Mother of Light
+(F) Infinite Wisdom
+(G) Ineffable Lover
+(H) Grand Architect
+(I) Father of Goodness
+(J) Supreme Creator",(I),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10832 (ori_mmlu-world_religions),
+M-PHI-11105,"QUESTION54) Which fallacy happens when someone argues in favor of a two part proposition, only supports one part of the proposition, then asserts that the entire proposition has been supported.
+(A) a priori
+(B) Complex proposition
+(C) Extension
+(D) Appeal to ignorance",(B),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11105 (ori_mmlu-logical_fallacies),
+M-PHI-10783,"QUESTION55) Ashford's article is meant to address a particular paralysis in the face of
+(A) the daunting task of solving worldwide economic imbalance.
+(B) the impossibility of meeting everyone's basic needs.
+(C) having to give up so much of our own wealth in light of Singer's arguments.
+(D) having to choose between addressing immediate harm and addressing structural injustice.
+(E) reconciling conflict moral theories.
+(F) the difficult task of prioritizing multiple global issues.
+(G) the challenge of implementing sustainable solutions to poverty.
+(H) the sheer scope of global poverty.
+(I) the overwhelming responsibility of addressing world hunger.
+(J) the complexity of addressing environmental issues globally.",(H),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10783 (ori_mmlu-moral_disputes),
+M-PHI-10881,"QUESTION56) ""The minor premise must affirm the antecedent or deny the consequent"" is a way to determine the validity of which type of argument?
+(A) Red herring argument
+(B) Ad hominem argument
+(C) Deductive argument
+(D) Categorical syllogism
+(E) Disjunctive syllogism
+(F) Inductive argument
+(G) Analogical argument
+(H) Slippery slope argument
+(I) Hypothetical syllogism
+(J) Toulmin model",(I),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10881 (ori_mmlu-logical_fallacies),
+M-PHI-11043,"QUESTION57) According to Singer, which of the following historical defenders of the principle of equal consideration of interests was one of the few to recognize that the principle applies to members of other species as well as to our own?
+(A) Aristotle
+(B) Friedrich Nietzsche
+(C) David Hume
+(D) Jeremy Bentham
+(E) John Stuart Mill
+(F) Thomas Hobbes
+(G) Immanuel Kant
+(H) Jean-Jacques Rousseau
+(I) Socrates
+(J) Rene Descartes",(D),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11043 (ori_mmlu-moral_disputes),
+M-PHI-11137,"QUESTION58) Naturalists who concentrated on natural elements and processes are associated with which of the following?
+(A) Mengzi
+(B) Zoroastrianism
+(C) Zen Buddhism
+(D) Shintoism
+(E) Vedic Philosophy
+(F) Humanistic Buddhism
+(G) Confucianism
+(H) Legalism
+(I) Yin-Yang School
+(J) Daoism",(I),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11137 (ori_mmlu-world_religions),
+M-PHI-10970,"QUESTION59) What does ""Mahavira"" mean?
+(A) ""Peaceful Warrior""
+(B) ""Great Hero""
+(C) ""The Ascetic""
+(D) ""The Lesser One""
+(E) ""Mendicant""
+(F) ""Great Sage""
+(G) ""The Enlightened One""
+(H) ""Supreme Being""
+(I) ""The Victorious One""
+(J) ""Master""",(B),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10970 (ori_mmlu-world_religions),
+M-PHI-10878,"QUESTION60) Which branch of Judaism founded by Zacharias Frankel is known for its ""Positive-Historical Judaism""?
+(A) Orthodox
+(B) Sephardic
+(C) Conservative
+(D) Hasidic
+(E) Reconstructionism
+(F) Secular
+(G) Liberal
+(H) Haredi
+(I) Ultra-Orthodox
+(J) Reformed",(C),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10878 (ori_mmlu-world_religions),
+M-HIS-04969,"QUESTION61) What made it possible to recover the nearly intact finely-made wooden spears from a 300,000-year-old site at Schöningen, Germany?
+(A) The soil was waterlogged and provided conditions that allowed for the preservation of organic material.
+(B) The spears were encased in amber, preserving them for thousands of years.
+(C) The site was frozen in ice, which preserved the wooden spears.
+(D) The wooden spears were placed in a cache of artifacts in plain sight, where archaeologists would eventually find them.
+(E) The spears were kept in a dry, desert-like environment, which preserved them.
+(F) The wooden spears were fossilized over time, preserving their original form.
+(G) The soil was highly acidic and aerobic, which offers excellent preservation for organic artifacts.
+(H) The spears were preserved due to the high salt content in the soil.
+(I) The spears were coated with a layer of resin which has preserved them.
+(J) The wooden spears were covered with dried blood mixed with charcoal and mud, which allows for the preservation of wood.",(A),mmlu,history,knowledge,,,MMLU-Pro test qid=4969 (ori_mmlu-prehistory),
+M-HIS-05038,"QUESTION62) How long ago did human groups begin actively controlling their food sources by artificially producing conditions under which these sources would grow?
+(A) within the past 12,000 years
+(B) within the past 1,000 years
+(C) within the past 24,000 years
+(D) within the past 2,000 years
+(E) within the past 6,000 years
+(F) within the past 40,000 years
+(G) within the past 28,000 years
+(H) within the past 30,000 years
+(I) within the past 35,000 years
+(J) within the past 18,000 years",(A),mmlu,history,knowledge,,,MMLU-Pro test qid=5038 (ori_mmlu-prehistory),
+M-HIS-04940,"QUESTION63) This question refers to the following information.
+Perhaps, however, I am more conscious of the importance of civil liberties in this particular moment of our history than anyone else, because I travel through the country and meet people and see things that have happened to little people, I realize what it means to democracy to preserve our civil liberties.
+All through the years we have had to fight for civil liberty, and we know that there are times when the light grows rather dim, and every time that happens democracy is in danger. Now, largely because of the troubled state of the world as a whole, civil liberties have disappeared in many other countries.
+It is impossible, of course, to be at war and keep freedom of the press and freedom of speech and freedom of assembly. They disappear automatically. And so in many countries where ordinarily they were safe, today they have gone. In other countries, even before war came, not only freedom of the press and freedom of assembly, and freedom of speech disappeared, but freedom of religion disappeared.
+And so we know here in this country, we have a grave responsibility. We are at peace. We have no reason for the fears which govern so many other peoples throughout the world; therefore, we have to guard the freedoms of democracy.
+—Eleanor Roosevelt, Address to the American Civil Liberties Union, Chicago, Illinois, March 14, 1940
+Roosevelt's concerns can most directly be compared to those of the people who debated which of the following?
+(A) The Homestead Act of 1862
+(B) The USA Patriot Act of 2001
+(C) The Gulf of Tonkin Resolution of 1964
+(D) The Affordable Care Act of 2010
+(E) The Civil Rights Act of 1964
+(F) The Indian Removal Act of 1830
+(G) The Social Security Act of 1935
+(H) The Defense of Marriage Act of 1996
+(I) The Voting Rights Act of 1965
+(J) The Alien and Sedition Acts of 1798",(B),mmlu,history,knowledge,,,MMLU-Pro test qid=4940 (ori_mmlu-high_school_us_history),
+M-HIS-04835,"QUESTION64) This question refers to the following information.
+Is it not unity alone that can weld us into an effective force, capable of creating our own progress and making our valuable contribution to world peace? Which independent African state will claim that its financial structure and banking institutions are fully harnessed to its national development? Which will claim that its material resources and human energies are available for its own national aspirations? We are fast learning that political independence is not enough to rid us of the consequences of colonial rule. We have been too busy nursing our separate states to understand fully the basic need for union, rooted in common purpose, common planning and common endeavour.
+Ghana's president, Kwame Nkrumah, addressing the Organization of African Unity, 1963
+Which of the following factors was most important in preventing the fulfillment of the political dreams described in the passage?
+(A) A lack of common ethnicity, language, or religion
+(B) The spread of communism throughout the continent
+(C) Armed intervention on the part of the Cold War superpowers
+(D) Africa's shortage of natural resources",(A),mmlu,history,knowledge,,,MMLU-Pro test qid=4835 (ori_mmlu-high_school_world_history),
+M-HIS-04823,"QUESTION65) Which of the following is NOT an innovation of the Mesolithic?
+(A) crop irrigation systems
+(B) the creation of fishing nets
+(C) European use of bow and arrow
+(D) domestication of animals
+(E) canoes
+(F) the development of flint tools",(A),mmlu,history,knowledge,,,MMLU-Pro test qid=4823 (ori_mmlu-prehistory),
+M-HIS-04762,"QUESTION66) Archaeological evidence indicates that cattle were first domesticated where and how long ago?
+(A) in sub-Saharan Africa, about 10,500 years ago
+(B) in western Europe, about 3,500 years ago
+(C) in the Middle East, about 10,500 years ago
+(D) in North America, about 5,500 years ago
+(E) in East Asia, about 5,500 years ago
+(F) in South America, about 6,500 years ago
+(G) in the Middle East, about 6,500 years ago
+(H) in North America, about 9,500 years ago
+(I) in sub-Saharan Africa, about 8,500 years ago
+(J) in Australia, about 7,500 years ago",(C),mmlu,history,knowledge,,,MMLU-Pro test qid=4762 (ori_mmlu-prehistory),
+M-HIS-04809,"QUESTION67) This question refers to the following information.
+""The struggle against neo-colonialism is not aimed at excluding the capital of the developed world from operating in less developed countries. It is aimed at preventing the financial power of the developed countries being used in such a way as to impoverish the less developed.
+Non-alignment, as practiced by Ghana and many other countries, is based on co-operation with all States whether they be capitalist, socialist or have a mixed economy. Such a policy, therefore, involves foreign investment from capitalist countries, but it must be invested in accordance with a national plan drawn up by the government of the non-aligned State with its own interests in mind. The issue is not what return the foreign investor receives on his investments…The question is one of power. A State in the grip of neo-colonialism is not master of its own destiny.""
+Kwame Nkrumah, Neo-Colonialism, 1965
+Which of the following would most directly result from the foreign investment from capitalist countries mentioned in the second paragraph?
+(A) The establishment of formal control over previous colonies by colonial powers
+(B) The establishment of successful democratic regimes in targets of foreign investment
+(C) The development of globalization and the spread of culture through consumerism
+(D) The reduction of political instability and unrest in former colonies",(C),mmlu,history,knowledge,,,MMLU-Pro test qid=4809 (ori_mmlu-high_school_world_history),
+M-HIS-04727,"QUESTION68) This question refers to the following information.
+While some theorists in the Middle Ages argued that the jihad was a defensive war… most authorities held that the obligation of jihad did not lapse until all the world was brought under the sway of Islam. The Bahr [al-Fava'id, or ""Sea of Precious Virtues,"" written in the 1150s or 1160s] insists that the first duty of a Muslim ruler is to prosecute the jihad and bring about the victory of Islam, and if he does not do so and he makes peace with the infidel, that ruler would be better dead than alive, for he would be corrupting the world.
+Robert Irwin, ""Islam and the Crusades,"" 1995
+It is strange how the Christians round Mount Lebanon, when they see any Muslim hermits, bring them food and treat them kindly, saying that these men are dedicated to the Great and Glorious God and that they should therefore share with them. Likewise, not one Christian merchant was stopped or hindered in Muslim territories.
+Ibn Jubayr, Muslim scholar, traveling to Mecca and Jerusalem, ca. 1185
+The first passage tends to support which of the following traditional historical assumptions?
+(A) That most Muslims during the crusading era were driven by economic gain rather than religious fervor
+(B) That Muslims during the crusading era were primarily focused on peaceful co-existence with Christians
+(C) That the majority of Muslims during the crusading era were more interested in scholarly pursuits than warfare
+(D) That the majority of Muslims were more peaceful than Christians during the crusading era
+(E) That many Muslims during the crusading era were driven by Islamic faith to be inherently violent
+(F) That most Muslims were interested only in protecting their own territory during the crusading era
+(G) That the ideology of holy war was taken seriously by Muslim elites during the crusading era
+(H) That the ideology of holy war was dismissed by Muslim elites during the crusading era
+(I) That the majority of Muslims were indifferent towards the ideology of holy war during the crusading era
+(J) That most Muslims were interested in converting Christians to Islam during the crusading era",(G),mmlu,history,knowledge,,,MMLU-Pro test qid=4727 (ori_mmlu-high_school_world_history),
+M-HIS-04746,"QUESTION69) This question refers to the following information.
+""We have witnessed for more than a quarter of a century the struggles of the two great political parties for power and plunder, while grievous wrongs have been inflicted upon the suffering people. We charge that the controlling influences dominating both these parties have permitted the existing dreadful conditions to develop without serious effort to prevent or restrain them. Neither do they now promise us any substantial reform. They have agreed together to ignore, in the coming campaign, every issue but one. They propose to drown the outcries of a plundered people with the uproar of a sham battle over the tariff, so that capitalists, corporations, national banks, rings, trusts, watered stock, the demonetization of silver and the oppressions of the usurers may all be lost sight of. They propose to sacrifice our homes, lives, and children on the altar of mammon; to destroy the multitude in order to secure corruption funds from the millionaires.
+""Assembled on the anniversary of the birthday of the nation, and filled with the spirit of the grand general and chief who established our independence, we seek to restore the government of the Republic to the hands of 'the plain people,' with which class it originated. We assert our purposes to be identical with the purposes of the National Constitution; to form a more perfect union and establish justice, insure domestic tranquillity, provide for the common defence, promote the general welfare, and secure the blessings of liberty for ourselves and our posterity.""
+Populist Party Platform, 1892
+The sentiments expressed in the excerpt above about political parties are most similar to those expressed by
+(A) Theodore Roosevelt, Progressive Party, 1912
+(B) Abraham Lincoln, Republican Party, 1860
+(C) H. Ross Perot, Reform Party, 1996
+(D) William Jennings Bryan, Populist Party, 1896
+(E) Barry Goldwater, Republican Party, 1964
+(F) Bernie Sanders, Democratic Party, 2016
+(G) Franklin D. Roosevelt, Democratic Party, 1932
+(H) Andrew Jackson, Democratic Party, 1829
+(I) Richard Nixon, Republican Party, 1968
+(J) George McGovern, Democratic Party, 1972",(C),mmlu,history,knowledge,,,MMLU-Pro test qid=4746 (ori_mmlu-high_school_us_history),
+M-HIS-05045,"QUESTION70) This question refers to the following information.
+""If any person or persons shall, from and after the passing of this act, by force and violence, take and carry away, or cause to be taken or carried away, and shall, by fraud or false pretense, seduce, or cause to be seduced, or shall attempt so to take, carry away or seduce, any negro or mulatto, from any part or parts of this commonwealth, to any other place or places whatsoever, out of this commonwealth, with a design and intention of selling and disposing of, or of causing to be sold, or of keeping and detaining, or of causing to be kept and detained, such negro or mulatto, as a slave or servant for life, or for any term whatsoever, every such person or persons, his or their aiders or abettors, shall on conviction thereof, in any court of this commonwealth having competent jurisdiction, be deemed guilty of a felony.""
+—Excerpt from Pennsylvania law, 1826
+The passage and implementation of this Pennsylvania law reflected an ongoing conflict between
+(A) supporters and opponents of government regulation of commerce.
+(B) rural and urban interests.
+(C) the legal system and the public's moral sentiment.
+(D) those who favored the abolition of slavery and those who wanted to maintain the status quo.
+(E) federal law and state law.
+(F) economic interests and humanitarian concerns.
+(G) Northern and Southern states over the issue of slavery.
+(H) the principles of capitalism and socialism.
+(I) those who favored gradual emancipation and those who favored immediate emancipation.
+(J) the rights of individuals and the power of the state.",(E),mmlu,history,knowledge,,,MMLU-Pro test qid=5045 (ori_mmlu-high_school_us_history),
+M-HIS-04904,"QUESTION71) Which of the following are techniques of trace element analysis?
+(A) gas chromatography-mass spectrometry and atomic force microscopy
+(B) infrared spectroscopy and ultraviolet-visible spectroscopy
+(C) Raman spectroscopy and Fourier-transform infrared spectroscopy
+(D) electron microscopy and nuclear magnetic resonance
+(E) gravitational wave detection and atomic absorption spectroscopy
+(F) gamma ray spectroscopy and positron emission tomography
+(G) neutron activation analysis and X- ray fluorescence
+(H) carbon isotope analysis and experimental replication
+(I) accelerator mass spectrometry and photosynthesis pathways
+(J) proton magnetometer and electrical resistivity",(G),mmlu,history,knowledge,,,MMLU-Pro test qid=4904 (ori_mmlu-prehistory),
+M-HIS-05017,"QUESTION72) This question refers to the following information.
+""The question, therefore, should be quickly settled, whether free colored persons, born and naturalized in this country, are not American citizens, and justly entitled to all the rights, privileges and immunities of citizens of the several states; and whether the Constitution of the United States makes or authorizes any invidious distinction with regard to the color or condition of free inhabitants.
+""For myself, I have not the shadow of doubt on the subject. I believe that the rights of the free colored persons need only to be vindicated before the U.S. Supreme Court, to be obtained; that no prejudice or sophistry . . . can prevent their acknowledgement . . . and that the present laws, affecting your condition, are clearly unconstitutional. The fact that you have been treated, by common consent and common usage, as aliens and brutes, is not proof that such treatment is legal, but only shows the strength, the bitterness, and the blindness of prejudice.""
+—William Lloyd Garrison, ""To the Free People of Color of the United States,"" The Liberator, January 15, 1831
+The approach of William Lloyd Garrison and The Liberator can best be seen as
+(A) an expression of Transcendentalist individualism.
+(B) a representation of Enlightenment thinking.
+(C) a continuation of the ideals of the First Great Awakening.
+(D) a reflection of literary romanticism.
+(E) a rejection of the idea of ""Republican motherhood.""
+(F) an outgrowth of the Second Great Awakening.
+(G) a manifestation of the principles of the Abolitionist movement.
+(H) an echo of the sentiments of the American Revolution.
+(I) an example of the influence of the Women's Suffrage movement.
+(J) an embodiment of the ideals of the Temperance movement.",(F),mmlu,history,knowledge,,,MMLU-Pro test qid=5017 (ori_mmlu-high_school_us_history),
+M-HIS-04703,"QUESTION73) The earliest-known use of bronze is found in:
+(A) China.
+(B) Africa.
+(C) Australia.
+(D) North America.
+(E) South America.
+(F) Europe.
+(G) Antarctica.
+(H) Greece.
+(I) the Indus Valley.",(A),mmlu,history,knowledge,,,MMLU-Pro test qid=4703 (ori_mmlu-prehistory),
+M-HIS-05047,"QUESTION74) This question refers to the following information.
+""An act for the more effectual protection of the property of married women:
+""§1. The real property of any female who may hereafter marry, and which she shall own at the time of marriage, and the rents, issues, and profits thereof, shall not be subject to the sole disposal of her husband, nor be liable for his debts, and shall continue her sole and separate property, as if she were a single female.
+""§2. The real and personal property, and the rents, issues, and profits thereof, of any female now married, shall not be subject to the disposal of her husband; but shall be her sole and separate property, as if she were a single female, except so far as the same may be liable for the debts of her husband heretofore contracted.
+""§3. Any married female may take by inheritance, or by gift, grant, devise, or bequest, from any person other than her husband, and hold to her sole and separate use, and convey and devise real and personal property, and any interest or estate therein, and the rents, issues, and profits thereof, in the same manner and with like effect as if she were unmarried, and the same shall not be subject to the disposal of her husband nor be liable for his debts.""
+—Married Women's Property Act, New York State (1848)
+Which of the following groups would be most likely to support the perspective of the Married Women's Property Act?
+(A) Congregational ministers.
+(B) Members of the American Anti-Slavery Society.
+(C) Supporters of the ""separate spheres"" ideology.
+(D) Southern supporters of the concept of ""female virtue.""
+(E) Proponents of the ""cult of domesticity"" value system.
+(F) Supporters of the ""true womanhood"" ideal.
+(G) Opponents of the women's suffrage movement.
+(H) Advocates for the patriarchal family structure.
+(I) Participants in the Seneca Falls Convention.
+(J) Advocates for the traditional gender roles in society.",(I),mmlu,history,knowledge,,,MMLU-Pro test qid=5047 (ori_mmlu-high_school_us_history),
+M-HIS-04967,"QUESTION75) From which of the following primates do humans descend?
+(A) bonobos
+(B) orangutans
+(C) gibbons
+(D) chimpanzees
+(E) baboons
+(F) gorillas
+(G) capuchin monkeys
+(H) lemurs
+(I) tarsiers
+(J) none of the above",(J),mmlu,history,knowledge,,,MMLU-Pro test qid=4967 (ori_mmlu-prehistory),

@@ -1,0 +1,8 @@
+# 검증한 환경: Python 3.14.0 / openai 2.30.0, numpy 2.4.1, pandas 2.3.3, pymupdf 1.28.2,
+# python-dotenv 1.2.2, pyarrow 24.0.0  (제출 직전에 최종 버전을 == 로 고정할 것)
+openai>=1.40,<3
+numpy>=1.24
+pandas>=2.0
+pymupdf>=1.24
+python-dotenv>=1.0
+pyarrow>=14        # scripts/make_dev.py (MMLU-Pro parquet 읽기)에만 필요
