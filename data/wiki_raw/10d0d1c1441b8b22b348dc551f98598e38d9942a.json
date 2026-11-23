@@ -1,0 +1,1 @@
+{"url": "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=3&srsearch=Donny+will+be+liable+for+assault%2C+but+not+battery+because+he+missed+Sally+with+the+knife.", "retrieved_at": "2026-11-23T19:54:01+0900", "response": {"batchcomplete": true, "query": {"searchinfo": {"totalhits": 0}, "search": []}}}

@@ -1,0 +1,1 @@
+{"url": "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=3&srsearch=Ashford%27s+article+is+meant+to+address+a+particular+paralysis+in+the+face+of", "retrieved_at": "2026-11-23T19:38:59+0900", "response": {"batchcomplete": true, "query": {"searchinfo": {"totalhits": 0}, "search": []}}}

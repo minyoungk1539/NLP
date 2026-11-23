@@ -21,6 +21,7 @@ _LENIENT = [
     ("answer_is", re.compile(r"(?i:answer\s+is)\s*:?\s*\(?\s*([A-J])\s*\)?(?![A-Za-z])")),
 ]
 _LAST_LINE_RE = re.compile(r"^\W*\(?([A-J])\)?\W*$")
+_LAST_LINE_OPTION_RE = re.compile(r"^\W{0,4}\(([A-J])\)\s+\S")
 
 
 def extract_letter(text: str | None, letters: list[str]) -> tuple[str | None, str]:
@@ -40,6 +41,9 @@ def extract_letter(text: str | None, letters: list[str]) -> tuple[str | None, st
         m = _LAST_LINE_RE.match(lines[-1])
         if m and m.group(1) in valid:
             return m.group(1), "last_line"
+        m = _LAST_LINE_OPTION_RE.match(lines[-1])          # 마지막 줄이 "(B) Great Hero"처럼 선택지로 시작
+        if m and m.group(1) in valid:
+            return m.group(1), "last_line_option"
     return None, "none"
 
 

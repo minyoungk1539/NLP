@@ -38,10 +38,49 @@ class CallRecord:
         return asdict(self)
 
 
+# ── 외부 호출 감사 (HTTP 계층) ─────────────────────────────────────────
+# QuestionSession의 집계는 파이프라인이 쓰는 창구 안에서 센다. 이것과 별개로, Upstage로 실제 나간
+# /chat/completions HTTP 응답을 httpx 이벤트 훅에서 센다. 파이프라인이 세션을 우회해도 여기서 잡힌다.
+# run.py가 문항마다 audit_scope(qid)를 열고, 끝난 뒤 http_audit(qid)로 검사한다 (스레드별 문항 1개).
+_audit_local = threading.local()
+_audit_lock = threading.Lock()
+_AUDIT: dict[str, dict[str, int]] = {}
+
+
+class audit_scope:
+    def __init__(self, qid: str):
+        self.qid = qid
+
+    def __enter__(self):
+        _audit_local.qid = self.qid
+        with _audit_lock:
+            _AUDIT[self.qid] = {"ok": 0, "failed": 0}
+        return self
+
+    def __exit__(self, *exc):
+        _audit_local.qid = None
+        return False
+
+
+def http_audit(qid: str) -> dict[str, int]:
+    with _audit_lock:
+        return dict(_AUDIT.get(qid, {"ok": 0, "failed": 0}))
+
+
+def _on_http_response(response) -> None:
+    if not response.request.url.path.endswith("/chat/completions"):
+        return                                          # 임베딩 등은 LLM 호출이 아님
+    qid = getattr(_audit_local, "qid", None) or "<no-question>"
+    key = "ok" if response.status_code == 200 else "failed"   # 429·5xx 뒤 SDK 재시도는 failed로 따로 센다
+    with _audit_lock:
+        _AUDIT.setdefault(qid, {"ok": 0, "failed": 0})[key] += 1
+
+
 class UpstageChat:
     """실제 Upstage 호출 백엔드. 여러 스레드에서 같이 써도 된다."""
 
     def __init__(self, api_key: str | None = None, timeout: float = 120, max_retries: int = 5):
+        import httpx
         from openai import OpenAI
 
         self.client = OpenAI(
@@ -49,6 +88,7 @@ class UpstageChat:
             base_url=config.BASE_URL,
             timeout=timeout,
             max_retries=max_retries,            # 429·5xx·연결 오류는 SDK가 지수 백오프로 재시도
+            http_client=httpx.Client(timeout=timeout, event_hooks={"response": [_on_http_response]}),
         )
         self._drop_reasoning = False
         self._lock = threading.Lock()

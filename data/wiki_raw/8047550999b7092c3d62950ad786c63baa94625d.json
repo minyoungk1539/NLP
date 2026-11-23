@@ -1,0 +1,1 @@
+{"url": "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=3&srsearch=d1+%3D+%28ln%28100%2F98%29+%2B+%280.055+%2B+0.5%5E2%2F2%29%2A0.5%29+%2F+%280.5%2Asqrt%280.5%29%29", "retrieved_at": "2026-11-23T20:03:02+0900", "response": {"batchcomplete": true, "query": {"searchinfo": {"totalhits": 0}, "search": []}}}

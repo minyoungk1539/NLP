@@ -1,0 +1,1 @@
+{"url": "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=3&srsearch=GERMANY%27S+AGGRESSIVE+ATTITUDE+GERMANY%27S+EXCESSIVE+CANDOUR+LED+TO+ITS+DOWNFALL", "retrieved_at": "2026-11-23T19:39:59+0900", "response": {"batchcomplete": true, "query": {"searchinfo": {"totalhits": 0}, "search": []}}}

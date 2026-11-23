@@ -3,6 +3,7 @@ from .base import Pipeline, Prediction, ask_once
 from .llm_only import LLMOnly
 from .rag_baseline import RAGBaseline
 from .routed import RoutedRAG
+from .mmlu_exp import EXPERIMENTS
 
 PIPELINES: dict[str, type[Pipeline]] = {
     cls.name: cls
@@ -10,6 +11,7 @@ PIPELINES: dict[str, type[Pipeline]] = {
         LLMOnly,
         RAGBaseline,
         RoutedRAG,
+        *EXPERIMENTS,
         # MyMethod,   ← 새 파이프라인 등록
     )
 }

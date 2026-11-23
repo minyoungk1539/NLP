@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 
 from rag import config  # noqa: E402
 from rag.answer import fallback_letter, format_response, validate_output_file  # noqa: E402
-from rag.llm import BudgetExceeded, QuestionSession, make_backend  # noqa: E402
+from rag.llm import BudgetExceeded, QuestionSession, audit_scope, http_audit, make_backend  # noqa: E402
 from rag.parser import load_questions  # noqa: E402
 from rag.pipelines import PIPELINES, Prediction  # noqa: E402
 from rag.scoring import format_summary, parse_pages, summarize  # noqa: E402
@@ -82,12 +82,14 @@ def solve_one(q, pipeline, backend, params) -> tuple[dict, list[dict]]:
     session = QuestionSession(backend, q.qid, defaults=params)
     t0 = time.perf_counter()
     error = None
-    try:
-        pred = pipeline.predict(q, session)
-    except BudgetExceeded as e:
-        pred, error = Prediction(None), f"BudgetExceeded: {e}"
-    except Exception as e:  # 한 문항 실패가 전체 실행을 멈추지 않도록
-        pred, error = Prediction(None), f"{type(e).__name__}: {e}\n{traceback.format_exc(limit=3)}"
+    with audit_scope(q.qid):                     # HTTP 계층 외부 집계 (세션 우회 호출도 잡힘)
+        try:
+            pred = pipeline.predict(q, session)
+        except BudgetExceeded as e:
+            pred, error = Prediction(None), f"BudgetExceeded: {e}"
+        except Exception as e:  # 한 문항 실패가 전체 실행을 멈추지 않도록
+            pred, error = Prediction(None), f"{type(e).__name__}: {e}\n{traceback.format_exc(limit=3)}"
+    audit = http_audit(q.qid)
 
     letter = pred.letter if pred.letter in q.letters else None
     fallback = letter is None
@@ -112,6 +114,8 @@ def solve_one(q, pipeline, backend, params) -> tuple[dict, list[dict]]:
         "fallback": fallback,
         "extract_method": pred.extract_method,
         "calls": session.calls_used,
+        "http_calls": audit["ok"],               # Upstage가 실제로 답한 /chat/completions 수 (외부 집계)
+        "http_failed": audit["failed"],          # 429·5xx 등 실패 응답 (SDK 자동 재시도 포함)
         "latency_s": round(time.perf_counter() - t0, 2),
         "parse_ok": q.parse_ok,
         "n_options": len(q.letters),
@@ -186,6 +190,16 @@ def main(argv=None) -> int:
     out.to_csv(out_path, index=False, encoding="utf-8")
 
     problems = validate_output_file(out_path, questions)
+    if not args.mock:                                       # 외부 집계로 규칙(문항당 5회) 재확인
+        over = [r["question_id"] for r in results if r["http_calls"] > config.MAX_CALLS_PER_QUESTION]
+        mismatch = [r["question_id"] for r in results if r["http_calls"] > r["calls"]]
+        hc = [r["http_calls"] for r in results]
+        print(f"외부 집계(HTTP): 문항당 평균 {sum(hc) / max(1, len(hc)):.2f} / 최대 {max(hc, default=0)}회"
+              f", 실패 응답 {sum(r['http_failed'] for r in results)}건")
+        if over:
+            problems.append(f"외부 집계 5회 초과 {len(over)}문항: {over[:10]}")
+        if mismatch:
+            print(f"⚠ 세션 집계보다 HTTP 호출이 많은 문항 {len(mismatch)}개 (세션 우회 의심): {mismatch[:10]}")
     summary = summarize(results)
     summary["format_ok"] = not problems
 

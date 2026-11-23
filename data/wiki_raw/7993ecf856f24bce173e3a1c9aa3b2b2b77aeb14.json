@@ -1,0 +1,1 @@
+{"url": "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=3&srsearch=Put+%3D+98%2Aexp%28-0.055%2A0.5%29%2AN%28-d2%29+-+100%2Aexp%28-0.01%2A0.5%29%2AN%28-d1%29", "retrieved_at": "2026-11-23T20:03:07+0900", "response": {"batchcomplete": true, "query": {"searchinfo": {"totalhits": 0}, "search": []}}}

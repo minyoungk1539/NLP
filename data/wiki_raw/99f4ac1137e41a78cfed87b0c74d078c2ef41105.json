@@ -1,0 +1,1 @@
+{"url": "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=3&srsearch=Mr.+Miles+salary+%24600+per+month+profits+%246%2C000+divided+equally", "retrieved_at": "2026-11-23T20:03:01+0900", "response": {"batchcomplete": true, "query": {"searchinfo": {"totalhits": 0}, "search": []}}}

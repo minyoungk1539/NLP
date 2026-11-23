@@ -1,0 +1,1 @@
+{"url": "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=3&srsearch=Mr.+Gafney%27s+income+is+%2414%2C572+and+Ms.+Medina%27s+income+is+%2415%2C028", "retrieved_at": "2026-11-23T19:52:09+0900", "response": {"batchcomplete": true, "query": {"searchinfo": {"totalhits": 0}, "search": []}}}
