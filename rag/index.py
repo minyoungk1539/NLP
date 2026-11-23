@@ -16,7 +16,7 @@ from pathlib import Path
 import numpy as np
 
 from . import config
-from .corpus import Chunk, chunk_fixed, file_sha256, load_pages
+from .corpus import Chunk, chunk_article, chunk_fixed, file_sha256, load_pages
 
 
 @dataclass
@@ -64,16 +64,21 @@ def index_path(name: str) -> Path:
 
 
 def build_ewha_index(name: str, embedder, size: int = config.DEFAULT_CHUNK_SIZE,
-                     overlap: int = config.DEFAULT_CHUNK_OVERLAP) -> VectorIndex:
-    """ewha.pdf → 고정 길이 청크 → 임베딩 → index/<name>/ 저장."""
+                     overlap: int = config.DEFAULT_CHUNK_OVERLAP, chunker: str = "fixed") -> VectorIndex:
+    """ewha.pdf → 청크 (fixed: 고정 길이 / article: 조 단위) → 임베딩 → index/<name>/ 저장."""
     pages = load_pages(config.EWHA_PDF)
-    chunks = chunk_fixed(pages, size=size, overlap=overlap)
+    if chunker == "article":
+        chunks = chunk_article(pages, max_chars=size, overlap=overlap)
+    elif chunker == "fixed":
+        chunks = chunk_fixed(pages, size=size, overlap=overlap)
+    else:
+        raise ValueError(f"알 수 없는 chunker: {chunker}")
     vectors = embedder.embed_passages([c.text for c in chunks])
     meta = {
         "name": name,
         "source": "data/ewha.pdf",
         "source_sha256": file_sha256(config.EWHA_PDF),
-        "chunker": {"type": "fixed", "size": size, "overlap": overlap, "strip_headers": True},
+        "chunker": {"type": chunker, "size": size, "overlap": overlap, "strip_headers": True},
         "embedder": embedder.model_id,
         "n_chunks": len(chunks),
         "dim": int(vectors.shape[1]),

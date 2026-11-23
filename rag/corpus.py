@@ -93,3 +93,119 @@ def chunk_fixed(pages: list[Page], size: int = config.DEFAULT_CHUNK_SIZE,
         nl = full.find("\n", nxt, end)                 # 다음 청크는 줄 시작에서
         pos = nl + 1 if nl != -1 else nxt
     return chunks
+
+
+# ── 조(條) 단위 청킹 ────────────────────────────────────────────────
+_CHAPTER_RE = re.compile(r"^제\s*\d+\s*장\s*\S")                       # 제3장 부설기관
+_SECTION_RE = re.compile(r"^제\s*\d+\s*절\s*\S")                       # 제1절 ...
+_ARTICLE_RE = re.compile(r"^(제\d+조(?:의\d+)?)\s*[（(]([^)）]*)[)）]")   # 제31조(재입학)
+_ADDENDA_RE = re.compile(r"^부\s*칙")                                   # 부칙(2014. 6. 17. 개정)
+_TABLE_RE = re.compile(r"^\[별표\s*\d+\]")                              # [별표 1]
+# 새 줄로 시작해야 하는 구조 표시: ①항, 1.호, 가.목, 장·절·조·부칙·별표
+_BLOCK_START_RE = re.compile(r"^(?:[①-⑳]|\d+\.\s|[가-하]\.\s|제\s*\d+\s*[장절조]|부\s*칙|\[별표)")
+_HANGUL_END_RE = re.compile(r"[가-힣]$")
+_HANGUL_START_RE = re.compile(r"^[가-힣]")
+
+
+def _join_lines(lines: list[str]) -> str:
+    """PDF 줄바꿈으로 끊긴 문장을 잇는다. 항·호·목 같은 구조 줄은 새 줄로 둔다.
+    한글-한글 사이 줄바꿈은 붙인다 ("편입학\n을" → "편입학을"). 줄 끝이 어절 경계일 때
+    띄어쓰기가 사라질 수 있지만 검색에는 영향이 작다."""
+    out: list[str] = []
+    for ln in lines:
+        s = ln.strip()
+        if not s:
+            continue
+        if not out or _BLOCK_START_RE.match(s):
+            out.append(s)
+        elif _HANGUL_END_RE.search(out[-1]) and _HANGUL_START_RE.match(s):
+            out[-1] += s
+        else:
+            out[-1] += " " + s
+    return "\n".join(out)
+
+
+def chunk_article(pages: list[Page], max_chars: int = 1200, overlap: int = 200) -> list[Chunk]:
+    """조·부칙·별표 단위로 자른다. 긴 조는 max_chars 창으로 나누되 머리말(장 > 조 제목)을 매 창 앞에 붙인다.
+
+    - 본문 조: 머리말 "제3장 부설기관 > 제7조(부설기관)"
+    - 부칙 안의 조: 머리말 "부칙(2014. 6. 17. 개정) > 제1조(시행일)"  (본문 조와 헷갈리지 않게)
+    - meta: article(제31조), title(재입학), chapter, addenda, kind(article/addenda/table/preamble)
+    """
+    sections: list[dict] = []
+    chapter, addenda = "", ""
+    cur = {"kind": "preamble", "head": "학칙 서두", "article": "", "title": "",
+           "chapter": "", "addenda": "", "lines": []}
+
+    def flush():
+        if any(t for t, _ in cur["lines"]):
+            sections.append(dict(cur))
+
+    for p in pages:
+        for raw in p.text.splitlines():
+            s = raw.strip()
+            if not s:
+                continue
+            new = None
+            if _CHAPTER_RE.match(s) and len(s) < 70:
+                chapter = re.sub(r"\s*[（(]\s*(?:개정|신설).*$", "", s).strip()   # 장 제목의 개정 날짜는 뺀다
+                addenda = ""
+                continue                                  # 장 제목은 머리말로만 쓴다
+            if _SECTION_RE.match(s) and len(s) < 70:
+                continue
+            if _TABLE_RE.match(s):
+                addenda = ""
+                new = {"kind": "table", "head": s.split("(")[0].strip() + " " + s[len(s.split("(")[0]):].strip(),
+                       "article": s.split("]")[0] + "]", "title": "", "chapter": "", "addenda": ""}
+            elif _ADDENDA_RE.match(s) and len(s) < 40:
+                addenda = re.sub(r"\s+", " ", s)
+                new = {"kind": "addenda", "head": addenda, "article": "", "title": "",
+                       "chapter": "", "addenda": addenda}
+            else:
+                m = _ARTICLE_RE.match(s)
+                if m:
+                    art, title = m.group(1), m.group(2).strip()
+                    if addenda:
+                        head = f"{addenda} > {art}({title})"
+                    else:
+                        head = f"{chapter} > {art}({title})" if chapter else f"{art}({title})"
+                    new = {"kind": "addenda" if addenda else "article", "head": head, "article": art,
+                           "title": title, "chapter": "" if addenda else chapter, "addenda": addenda}
+            if new:
+                flush()
+                cur = {**new, "lines": []}
+            cur["lines"].append((s, p.page_no))
+    flush()
+
+    chunks: list[Chunk] = []
+    for sec in sections:
+        body_lines = [t for t, _ in sec["lines"]]
+        # 줄별 쪽 번호를 잇기 전 텍스트 위치로 추적하기 어려우므로, 창 단위 쪽 범위는 줄 비율로 근사
+        text = _join_lines(body_lines)
+        pages_all = [pg for _, pg in sec["lines"]]
+        windows = []
+        if len(text) <= max_chars:
+            windows.append((0, len(text)))
+        else:
+            start = 0
+            while start < len(text):
+                end = min(start + max_chars, len(text))
+                if end < len(text):
+                    nl = text.rfind("\n", start + int(max_chars * 0.5), end)
+                    if nl != -1:
+                        end = nl
+                windows.append((start, end))
+                if end >= len(text):
+                    break
+                start = max(end - overlap, start + 1)
+        for a, b in windows:
+            lo = pages_all[min(len(pages_all) - 1, int(len(pages_all) * a / max(1, len(text))))]
+            hi = pages_all[min(len(pages_all) - 1, int(len(pages_all) * b / max(1, len(text))))]
+            body = text[a:b].strip()
+            if not body:
+                continue
+            prefix = sec["head"]
+            full = body if body.startswith(prefix) else f"[{prefix}]\n{body}"
+            meta = {k: sec[k] for k in ("kind", "article", "title", "chapter", "addenda") if sec[k]}
+            chunks.append(Chunk(f"a{len(chunks):04d}", full, min(lo, hi), max(lo, hi), meta))
+    return chunks

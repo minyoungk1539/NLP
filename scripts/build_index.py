@@ -2,6 +2,7 @@
 
     python scripts/build_index.py                       # index/ewha_fixed800 (Upstage 임베딩)
     python scripts/build_index.py --size 500 --overlap 100 --name ewha_fixed500
+    python scripts/build_index.py --chunker article --size 1200 --overlap 200 --name ewha_article
     python scripts/build_index.py --mock                # index/mock_ewha_fixed800 (API 없이)
     python scripts/build_index.py --dump                # 청크를 index/<name>/chunks_preview.txt 로도 저장
 
@@ -25,6 +26,8 @@ def main():
     ap.add_argument("--name", default=config.DEFAULT_INDEX)
     ap.add_argument("--size", type=int, default=config.DEFAULT_CHUNK_SIZE)
     ap.add_argument("--overlap", type=int, default=config.DEFAULT_CHUNK_OVERLAP)
+    ap.add_argument("--chunker", choices=["fixed", "article"], default="fixed",
+                    help="fixed: 고정 길이 / article: 조·부칙·별표 단위 (긴 조는 --size 창으로 나눔)")
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--force", action="store_true", help="이미 있어도 다시 만들기")
     ap.add_argument("--dump", action="store_true")
@@ -36,7 +39,7 @@ def main():
     if (path / "meta.json").exists() and not a.force:
         print(f"이미 있음: {path} (다시 만들려면 --force)")
         return
-    idx = build_ewha_index(name, make_embedder(a.mock), size=a.size, overlap=a.overlap)
+    idx = build_ewha_index(name, make_embedder(a.mock), size=a.size, overlap=a.overlap, chunker=a.chunker)
     print(f"저장: {path}  청크 {idx.meta['n_chunks']}개, dim {idx.meta['dim']}, 임베더 {idx.meta['embedder']}")
     lens = [len(c.text) for c in idx.chunks]
     print(f"청크 길이(글자) 평균 {sum(lens) / len(lens):.0f}, 최소 {min(lens)}, 최대 {max(lens)}")
