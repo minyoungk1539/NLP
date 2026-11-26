@@ -319,17 +319,17 @@ M-PSY-02319,"QUESTION30) What is validity?
 (H) Validity is the ease with which test results can be compared across different populations.
 (I) Validity is the consistency of test results over time.
 (J) Validity is the subjective interpretation of a test.",(B),mmlu,psychology,knowledge,,,MMLU-Pro test qid=2319 (stemez-Psychology),
-M-BUS-00833,"QUESTION31) A debt of $25,000 is to be amortized over 7 years at 7% interest. What value of monthly payments will achieve this?
-(A) $4925.00
-(B) 4500.00
-(C) $4750.00
-(D) $4333.33
-(E) $4100.00
-(F) $3500.00
-(G) $3895.67
-(H) 4638.83
-(I) 5000.00
-(J) 4800.00",(H),mmlu,business,knowledge,,,MMLU-Pro test qid=833 (theoremQA-Finance),
+M-BUS-00577,"QUESTION31) Suppose there are 8,000 hours in a year (actually there are 8,760) and that an individual has a potential market wage of $5 per hour. Suppose a rich uncle dies and leaves the individual an annual income of $4,000 per year. If he or she devotes 75 percent of full income to leisure, how many hours will be worked?
+(A) 2400
+(B) 2200
+(C) 1200
+(D) 1800
+(E) 2000
+(F) 1600
+(G) 1400
+(H) 1000
+(I) 800
+(J) 600",(G),mmlu,business,knowledge,,,MMLU-Pro test qid=577 (theoremQA-Finance),
 M-BUS-00109,"QUESTION32) Mr. Castle will buy one of two 10-HP motors offered to him. Motor A sells for $169 and has a full-load efficiency of 85.2%. Motor B costs $149 and has a full-load efficiency of 82.1%. The annual inspection and maintenance fee on both motors is 14.5% of the price. If electric energy costs 2.35 cents per kilowatt hour (1 HP = 0.746kw.) find the number of hours per year at which the cost of both motors will be the same.
 (A) 450 hours
 (B) 400 hours
@@ -476,17 +476,17 @@ M-BUS-00582,"QUESTION44) As a result of a blow-out, Frank Lincoln's car swerved 
 (H) $7,500
 (I) $6,000
 (J) $5,000",(G),mmlu,business,knowledge,,,MMLU-Pro test qid=582 (stemez-Business),
-M-BUS-00240,"QUESTION45) Daniel receives at 6.5% commission on all sales. If he received a $275.08 commission, what were his sales?
-(A) $3200
-(B) $4750
-(C) $2600
-(D) $5000
-(E) $4243
-(F) $4230
-(G) $4000
-(H) $4500
-(I) $3500
-(J) $3000",(E),mmlu,business,knowledge,,,MMLU-Pro test qid=240 (stemez-Business),
+M-BUS-00304,"QUESTION45) Nelson's Cycle Shop had a January 1 inventory of $30,156. During the month, new merchandise purchases totaled $28,300, and sales totaled $72,600. If the margin on sales was 45%, estimate the final inventory.
+(A) $28,300
+(B) $45,600
+(C) $32,670
+(D) $22,150
+(E) $20,000
+(F) $41,200
+(G) $18,526
+(H) $39,930
+(I) $34,850
+(J) $25,400",(G),mmlu,business,knowledge,,,MMLU-Pro test qid=304 (stemez-Business),
 M-PHI-11270,"QUESTION46) Huemer worries that the employment of a ""war"" metaphor when describing government policies about drug use
 (A) does not really describe the situation well at all, since it is more like a game than a war.
 (B) diminishes the seriousness of actual wars.
@@ -512,18 +512,18 @@ M-PHI-11011,"QUESTION48) I don't understand why everyone thinks they belong in c
 (B) Straw Man
 (C) Denying the Antecedent
 (D) Begging the Question",(C),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=11011 (ori_mmlu-logical_fallacies),
-M-PHI-10952,"QUESTION49) Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)
-~C ⊃ D
-D ⊃ C / C
-(A) Invalid. Counterexample when C is true and D is false
-(B) Invalid. Counterexample when D is false and C is true
-(C) Invalid. Counterexample when C and D are true
-(D) Invalid. Counterexample when C and D are both false
-(E) Invalid. Counterexample when C is false and D is true
-(F) Invalid. Counterexample when D is true and C is false
-(G) Valid
-(H) Valid. No counterexample exists
-(I) Invalid. Counterexample when D and C are both true",(G),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10952 (ori_mmlu-formal_logic),
+M-PHI-10861,"QUESTION49) Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)
+~A · ~B
+(A ∨ C) ∨ B / C
+(A) Invalid. Counterexample when A, B, and C are all true
+(B) Invalid. Counterexample when A, B, and C are all false
+(C) Invalid. Counterexample when A and B are true and C is false
+(D) Invalid. Counterexample when B is true and A and C are false
+(E) Invalid. Counterexample when A and C are true and B is false
+(F) Invalid. Counterexample when A is true and B and C are false
+(G) Invalid. Counterexample when A is false and B and C are true
+(H) Valid
+(I) Invalid. Counterexample when C is true and A and B are false",(H),mmlu,philosophy,knowledge,,,MMLU-Pro test qid=10861 (ori_mmlu-formal_logic),
 M-PHI-11018,"QUESTION50) Mill defines “utility” as:
 (A) advantage or benefit to the user.
 (B) usefulness for some craft.
@@ -763,31 +763,26 @@ M-HIS-04904,"QUESTION71) Which of the following are techniques of trace element 
 (H) carbon isotope analysis and experimental replication
 (I) accelerator mass spectrometry and photosynthesis pathways
 (J) proton magnetometer and electrical resistivity",(G),mmlu,history,knowledge,,,MMLU-Pro test qid=4904 (ori_mmlu-prehistory),
-M-HIS-05017,"QUESTION72) This question refers to the following information.
-""The question, therefore, should be quickly settled, whether free colored persons, born and naturalized in this country, are not American citizens, and justly entitled to all the rights, privileges and immunities of citizens of the several states; and whether the Constitution of the United States makes or authorizes any invidious distinction with regard to the color or condition of free inhabitants.
-""For myself, I have not the shadow of doubt on the subject. I believe that the rights of the free colored persons need only to be vindicated before the U.S. Supreme Court, to be obtained; that no prejudice or sophistry . . . can prevent their acknowledgement . . . and that the present laws, affecting your condition, are clearly unconstitutional. The fact that you have been treated, by common consent and common usage, as aliens and brutes, is not proof that such treatment is legal, but only shows the strength, the bitterness, and the blindness of prejudice.""
-—William Lloyd Garrison, ""To the Free People of Color of the United States,"" The Liberator, January 15, 1831
-The approach of William Lloyd Garrison and The Liberator can best be seen as
-(A) an expression of Transcendentalist individualism.
-(B) a representation of Enlightenment thinking.
-(C) a continuation of the ideals of the First Great Awakening.
-(D) a reflection of literary romanticism.
-(E) a rejection of the idea of ""Republican motherhood.""
-(F) an outgrowth of the Second Great Awakening.
-(G) a manifestation of the principles of the Abolitionist movement.
-(H) an echo of the sentiments of the American Revolution.
-(I) an example of the influence of the Women's Suffrage movement.
-(J) an embodiment of the ideals of the Temperance movement.",(F),mmlu,history,knowledge,,,MMLU-Pro test qid=5017 (ori_mmlu-high_school_us_history),
-M-HIS-04703,"QUESTION73) The earliest-known use of bronze is found in:
-(A) China.
-(B) Africa.
-(C) Australia.
-(D) North America.
-(E) South America.
-(F) Europe.
-(G) Antarctica.
-(H) Greece.
-(I) the Indus Valley.",(A),mmlu,history,knowledge,,,MMLU-Pro test qid=4703 (ori_mmlu-prehistory),
+M-HIS-04964,"QUESTION72) Which of the following characteristics of modern humans is the most ancient, pre-dating the Late Stone Age, the Upper Paleolithic and even anatomically modern humans?
+(A) establishment of permanent settlements
+(B) development of agriculture
+(C) domestication of animals
+(D) creation of written language
+(E) symbolic expression through the production of art
+(F) development of complex social hierarchies
+(G) elaborate burials
+(H) improved stone tool technologies
+(I) larger sites with larger populations",(H),mmlu,history,knowledge,,,MMLU-Pro test qid=4964 (ori_mmlu-prehistory),
+M-HIS-04705,"QUESTION73) What is the difference between an absolute date and a relative date?
+(A) An absolute date is a fixed point in time, while a relative date is flexible and can be adjusted according to context.
+(B) A relative date is derived from radiometric dating techniques, while an absolute date is only associated with written documents.
+(C) An absolute date is based on the Gregorian calendar, while a relative date is based on lunar phases.
+(D) A relative date refers to a year or a range of years, while an absolute date indicates a chronological order.
+(E) A relative date is a date that can be calculated from an absolute date, while an absolute date cannot be derived from a relative date.
+(F) A relative date is an exact moment in time, while an absolute date is a general time period.
+(G) An absolute date is known by everyone, while a relative date ranges from 30 to 50 years.
+(H) An absolute date refers to a year or a range of years, while a relative date indicates a chronological order.
+(I) A relative date is determined using carbon dating, while an absolute date is estimated using historical records.",(H),mmlu,history,knowledge,,,MMLU-Pro test qid=4705 (ori_mmlu-prehistory),
 M-HIS-05047,"QUESTION74) This question refers to the following information.
 ""An act for the more effectual protection of the property of married women:
 ""§1. The real property of any female who may hereafter marry, and which she shall own at the time of marriage, and the rents, issues, and profits thereof, shall not be subject to the sole disposal of her husband, nor be liable for his debts, and shall continue her sole and separate property, as if she were a single female.
