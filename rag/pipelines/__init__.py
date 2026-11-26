@@ -4,6 +4,8 @@ from .llm_only import LLMOnly
 from .rag_baseline import RAGBaseline
 from .routed import RoutedRAG
 from .mmlu_exp import EXPERIMENTS
+from .ewha_prompt import EwhaPrompt
+from .ewha_prompt_v2 import EwhaPromptV2
 
 PIPELINES: dict[str, type[Pipeline]] = {
     cls.name: cls
@@ -12,6 +14,8 @@ PIPELINES: dict[str, type[Pipeline]] = {
         RAGBaseline,
         RoutedRAG,
         *EXPERIMENTS,
+        EwhaPrompt,
+        EwhaPromptV2,
         # MyMethod,   ← 새 파이프라인 등록
     )
 }
