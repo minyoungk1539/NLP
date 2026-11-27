@@ -6,6 +6,8 @@ from .routed import RoutedRAG
 from .mmlu_exp import EXPERIMENTS
 from .ewha_prompt import EwhaPrompt
 from .ewha_prompt_v2 import EwhaPromptV2
+from .ewha_xref import EwhaXref
+from .ewha_xref_v2 import EwhaXrefV2
 
 PIPELINES: dict[str, type[Pipeline]] = {
     cls.name: cls
@@ -16,6 +18,8 @@ PIPELINES: dict[str, type[Pipeline]] = {
         *EXPERIMENTS,
         EwhaPrompt,
         EwhaPromptV2,
+        EwhaXref,
+        EwhaXrefV2,
         # MyMethod,   ← 새 파이프라인 등록
     )
 }
